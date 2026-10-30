@@ -1,4 +1,4 @@
-.rpm-funnel { padding: 96px 0; background: var(--rpm-bg); }
+.rpm-funnel { padding: 24px 0 96px; background: var(--rpm-bg); }
 .rpm-funnel-head { text-align: center; max-width: 620px; margin: 0 auto 56px; }
 .rpm-funnel-eyebrow { display: inline-block; font-size: 13px; font-weight: 700; letter-spacing: 1px; text-transform: uppercase; color: var(--rpm-emerald-dark); margin-bottom: 10px; }
 .rpm-funnel-title { font-family: var(--rpm-font-head); font-size: 40px; line-height: 1.15; color: var(--rpm-text-dark); margin-bottom: 12px; }

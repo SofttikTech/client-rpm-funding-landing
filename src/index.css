@@ -19,7 +19,7 @@ a { color: inherit; text-decoration: none; }
 button { font-family: inherit; cursor: pointer; }
 
 .rpm-page { overflow-x: hidden; }
-.rpm-container { max-width: 1120px; margin: 0 auto; padding: 0 24px; }
+.rpm-container { max-width: 1360px; margin: 0 auto; padding: 0 32px; }
 
 .rpm-btn { display: inline-flex; align-items: center; justify-content: center; gap: 10px; background: var(--rpm-emerald); color: #fff; font-size: 16px; font-weight: 700; padding: 16px 32px; border: none; border-radius: 10px; box-shadow: 0 8px 24px rgba(16, 183, 127, 0.35); transition: all 0.3s ease-in-out; }
 .rpm-btn:hover { background: var(--rpm-emerald-dark); transform: translateY(-2px); }
