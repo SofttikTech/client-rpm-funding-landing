@@ -9,7 +9,6 @@ function FinalCta({ onApply }) {
     <section className="rpm-final" id="rpm-cta">
       <div className="rpm-container">
         <Reveal className="rpm-final-cta">
-          <span className="rpm-final-cta-mark" aria-hidden="true">R</span>
           <h2 className="rpm-final-cta-title">Keep your doors open and your <em>business growing</em></h2>
           <p className="rpm-final-cta-sub">Apply in 30 seconds. No obligation, no hard credit pull.</p>
           <div className="rpm-final-cta-actions">
