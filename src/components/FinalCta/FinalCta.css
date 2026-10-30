@@ -1,0 +1,22 @@
+.rpm-final { padding: 0 0 56px; background: var(--rpm-bg); }
+.rpm-final-banner { background: linear-gradient(160deg, var(--rpm-navy-dark), var(--rpm-navy-light)); color: #fff; text-align: center; border-radius: 24px; padding: 64px 32px; margin-bottom: 72px; }
+.rpm-final-banner-title { font-family: var(--rpm-font-head); font-size: 38px; line-height: 1.15; max-width: 640px; margin: 0 auto 12px; }
+.rpm-final-banner-sub { color: rgba(255, 255, 255, 0.78); margin-bottom: 28px; font-size: 17px; }
+.rpm-final-banner-call { margin-top: 20px; font-size: 14px; color: rgba(255, 255, 255, 0.7); }
+.rpm-final-banner-call a { color: var(--rpm-emerald); font-weight: 700; }
+
+.rpm-final-faq { max-width: 760px; margin: 0 auto 64px; }
+.rpm-final-faq-title { font-family: var(--rpm-font-head); font-size: 30px; color: var(--rpm-text-dark); text-align: center; margin-bottom: 24px; }
+.rpm-final-faq-item { background: #fff; border-radius: 12px; margin-bottom: 10px; box-shadow: 0 2px 12px rgba(0, 0, 0, 0.05); }
+.rpm-final-faq-question { width: 100%; display: flex; justify-content: space-between; align-items: center; gap: 16px; background: none; border: none; text-align: left; font-size: 16px; font-weight: 600; color: var(--rpm-text-dark); padding: 18px 22px; }
+.rpm-final-faq-icon { font-style: normal; font-size: 22px; color: var(--rpm-emerald-dark); }
+.rpm-final-faq-answer { padding: 0 22px 20px; font-size: 15px; }
+
+.rpm-final-footer { border-top: 1px solid var(--rpm-border); padding-top: 28px; }
+.rpm-final-footer-text { font-size: 12px; line-height: 1.7; color: #6b7280; margin-bottom: 12px; }
+.rpm-final-footer-copy { font-size: 12px; color: #6b7280; }
+
+@media (max-width: 600px) {
+  .rpm-final-banner { padding: 44px 22px; }
+  .rpm-final-banner-title { font-size: 28px; }
+}
