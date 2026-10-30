@@ -47,7 +47,7 @@ function Hero({ onApply }) {
         <div className="rpm-hero-grid">
           <div className="rpm-hero-copy">
             <span className="rpm-hero-badge"><i className="rpm-hero-badge-dot" /><span className="rpm-hero-badge-text" key={index}>{PHOTOS[index]['audience']}</span></span>
-            <h1 className="rpm-hero-title">Fast working capital, <em>repaid from your daily sales</em></h1>
+            <h1 className="rpm-hero-title">Get funded fast. <em>Repay as you sell.</em></h1>
             <div className="rpm-hero-actions">
               <button type="button" className="rpm-btn rpm-btn-pulse" onClick={onApply}>See if I qualify <i className="rpm-hero-arrow">→</i></button>
               <span className="rpm-hero-note">Takes about 30 seconds</span>
