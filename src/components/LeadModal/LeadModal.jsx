@@ -38,22 +38,14 @@ function LeadModal({ isOpen, onClose }) {
 
         <aside className="rpm-modal-side">
           <span className="rpm-modal-glow" />
-          <div className="rpm-modal-message">
-            <span className="rpm-modal-badge">Free application · About 30 seconds</span>
-            <h2 className="rpm-modal-title">Apply in <em>30 seconds</em></h2>
-            <ul className="rpm-modal-perks">
-              {PERKS.map((item) => <li key={item} className="rpm-modal-perk">{item}</li>)}
-            </ul>
-          </div>
-
+          <h2 className="rpm-modal-title">Apply in <em>30 seconds</em></h2>
+          <ul className="rpm-modal-perks">
+            {PERKS.map((item) => <li key={item} className="rpm-modal-perk">{item}</li>)}
+          </ul>
           <div className="rpm-modal-proof">
-            <img className="rpm-modal-photo" src="/hero-owner.jpg" alt="" />
-            <div className="rpm-modal-proof-copy">
-              <span className="rpm-modal-eyebrow">Working capital up to</span>
-              <strong className="rpm-modal-amount">$5M</strong>
-            </div>
+            <p className="rpm-modal-amount">Up to <b>$5M</b> in working capital</p>
+            <p className="rpm-modal-fact">Trusted by 5,000+ businesses · $500MM+ funded</p>
           </div>
-          <p className="rpm-modal-fact">Trusted by 5,000+ businesses · $500MM+ funded</p>
         </aside>
       </div>
     </div>
