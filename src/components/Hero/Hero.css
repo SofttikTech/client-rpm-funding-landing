@@ -13,7 +13,6 @@
 .rpm-hero-phone { display: inline-flex; align-items: center; gap: 8px; font-weight: 600; font-size: 15px; color: #fff; }
 
 .rpm-hero-grid { display: grid; grid-template-columns: 1.3fr 0.7fr; gap: 64px; align-items: center; }
-.rpm-hero-badge { display: block; min-height: 20px; font-size: 13px; font-weight: 600; letter-spacing: 1.6px; text-transform: uppercase; color: #6ee7b7; margin-bottom: clamp(16px, 3vh, 30px); }
 .rpm-hero-title { font-family: var(--rpm-font-head); font-size: clamp(30px, min(3vw, 5.4vh), 46px); white-space: nowrap; line-height: 1.15; font-weight: 800; margin-bottom: clamp(26px, 5vh, 52px); }
 .rpm-hero-title em { font-style: normal; background: linear-gradient(90deg, var(--rpm-emerald), #6ee7b7); -webkit-background-clip: text; background-clip: text; color: transparent; }
 .rpm-hero-actions { display: flex; align-items: center; flex-wrap: wrap; gap: 16px 20px; margin-bottom: clamp(30px, 6vh, 64px); }
@@ -46,7 +45,6 @@
 .rpm-hero-divider-back { fill: rgba(244, 246, 250, 0.35); }
 .rpm-hero-divider-front { fill: var(--rpm-bg); }
 
-.rpm-hero-badge-text { animation: rpm-hero-tag-in 0.8s ease-out both; }
 
 @keyframes rpm-hero-drift-a { from { transform: translate(0, 0); } to { transform: translate(-90px, 70px); } }
 @keyframes rpm-hero-drift-b { from { transform: translate(0, 0); } to { transform: translate(110px, -60px); } }

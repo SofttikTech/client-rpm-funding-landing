@@ -46,7 +46,6 @@ function Hero({ onApply }) {
 
         <div className="rpm-hero-grid">
           <div className="rpm-hero-copy">
-            <span className="rpm-hero-badge"><span className="rpm-hero-badge-text" key={index}>{PHOTOS[index]['audience']}</span></span>
             <h1 className="rpm-hero-title">Get funded fast. <em>Repay as you sell.</em></h1>
             <div className="rpm-hero-actions">
               <button type="button" className="rpm-btn rpm-btn-pulse" onClick={onApply}>See if I qualify <i className="rpm-hero-arrow">→</i></button>
@@ -115,9 +114,9 @@ const TRUST_ICONS = [
   { label: 'Retail shops', Icon: ShoppingBag }
 ]
 const PHOTOS = [
-  { src: '/hero-owner.jpg', alt: 'Smiling restaurant owner checking sales on his phone', tag: 'Restaurants', audience: 'Built for restaurant owners', position: '40% 50%' },
-  { src: '/hero-salon.jpg', alt: 'Smiling salon owner standing in her salon', tag: 'Salons and parlors', audience: 'Built for salon and parlor owners', position: '45% 50%' },
-  { src: '/hero-medspa.jpg', alt: 'Smiling clinic owner in a bright studio', tag: 'Med spas', audience: 'Built for med spa owners', position: '50% 25%' }
+  { src: '/hero-owner.jpg', alt: 'Smiling restaurant owner checking sales on his phone', tag: 'Restaurants', position: '40% 50%' },
+  { src: '/hero-salon.jpg', alt: 'Smiling salon owner standing in her salon', tag: 'Salons and parlors', position: '45% 50%' },
+  { src: '/hero-medspa.jpg', alt: 'Smiling clinic owner in a bright studio', tag: 'Med spas', position: '50% 25%' }
 ]
 
 export default Hero
