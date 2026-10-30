@@ -88,7 +88,7 @@ function Hero({ onApply }) {
             </div>
             <div className="rpm-hero-trust">
               <div className="rpm-hero-trust-top">
-                <span className="rpm-hero-trust-mark"><ShieldCheck size={26} strokeWidth={1.75} aria-hidden="true" /></span>
+                <span className="rpm-hero-trust-mark"><ShieldCheck size={28} strokeWidth={1.7} aria-hidden="true" /></span>
                 <div className="rpm-hero-trust-text">
                   <strong className="rpm-hero-trust-headline">Trusted by <b>5,000+</b> business owners</strong>
                   <span className="rpm-hero-trust-sub">Miami, FL · Since 2019</span>
