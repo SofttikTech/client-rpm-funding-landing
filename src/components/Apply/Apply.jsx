@@ -20,10 +20,8 @@ function Apply() {
             <ol className="rpm-apply-steps">
               {STEPS.map(({ Icon, title, text }, index) => (
                 <li key={title} className="rpm-apply-step">
-                  <span className="rpm-apply-step-icon">
-                    <Icon size={24} strokeWidth={1.75} aria-hidden="true" />
-                    <span className="rpm-apply-step-num">{index + 1}</span>
-                  </span>
+                  <span className="rpm-apply-step-num">{index + 1}</span>
+                  <span className="rpm-apply-step-icon"><Icon size={30} strokeWidth={1.6} aria-hidden="true" /></span>
                   <div className="rpm-apply-step-body">
                     <h3 className="rpm-apply-step-title">{title}</h3>
                     <p className="rpm-apply-step-text">{text}</p>

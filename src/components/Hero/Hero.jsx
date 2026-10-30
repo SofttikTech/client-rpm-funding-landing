@@ -1,5 +1,5 @@
 import { useEffect, useRef, useState } from 'react'
-import { ShieldCheck, Phone, ArrowRight } from 'lucide-react'
+import { ShieldCheck, Phone, ArrowRight, ChevronLeft, ChevronRight } from 'lucide-react'
 import { PHONE_DISPLAY, PHONE_HREF } from '../../config'
 import './Hero.css'
 
@@ -107,7 +107,7 @@ function Hero({ onApply }) {
 
           <div className="rpm-hero-visual">
             <div className="rpm-hero-carousel" ref={frameRef}>
-              <div className="rpm-hero-viewport">
+              <div className={`rpm-hero-viewport${index === PHOTOS.length - 1 ? ' is-last' : ''}`}>
                 <div className="rpm-hero-track" style={{ transform: `translate3d(calc(-1 * min(${index} * (${SLIDE_WIDTH}% + ${SLIDE_GAP}px), ${(PHOTOS.length * SLIDE_WIDTH) - 100}% + ${(PHOTOS.length - 1) * SLIDE_GAP}px)), 0, 0)` }}>
                   {PHOTOS.map(({ src, alt, position }, i) => (
                     <div key={src} className={`rpm-hero-slide${i === index ? ' active' : ''}`}>
@@ -116,10 +116,14 @@ function Hero({ onApply }) {
                   ))}
                 </div>
               </div>
-              <div className="rpm-hero-dots">
-                {PHOTOS.map(({ tag }, i) => (
-                  <button key={tag} type="button" aria-label={`Show ${tag}`} className={`rpm-hero-dot${i === index ? ' active' : ''}`} onClick={() => setIndex(i)} />
-                ))}
+              <div className="rpm-hero-controls">
+                <button type="button" className="rpm-hero-arrow-btn" aria-label="Previous photo" onClick={() => setIndex((index + PHOTOS.length - 1) % PHOTOS.length)}><ChevronLeft size={20} strokeWidth={2} aria-hidden="true" /></button>
+                <div className="rpm-hero-dots">
+                  {PHOTOS.map(({ tag }, i) => (
+                    <button key={tag} type="button" aria-label={`Show ${tag}`} className={`rpm-hero-dot${i === index ? ' active' : ''}`} onClick={() => setIndex(i)} />
+                  ))}
+                </div>
+                <button type="button" className="rpm-hero-arrow-btn" aria-label="Next photo" onClick={() => setIndex((index + 1) % PHOTOS.length)}><ChevronRight size={20} strokeWidth={2} aria-hidden="true" /></button>
               </div>
             </div>
           </div>
@@ -140,7 +144,7 @@ const STATS = [
   { value: '24hrs', label: 'average funding time' }
 ]
 // Reason: one icon per industry RPM serves, in place of customer faces we do not have permission to show
-const SLIDE_WIDTH = 82
+const SLIDE_WIDTH = 86
 const SLIDE_GAP = 16
 const PHOTOS = [
   { src: '/hero-owner.jpg', alt: 'Smiling restaurant owner checking sales on his phone', tag: 'Restaurants', position: '40% 50%' },
