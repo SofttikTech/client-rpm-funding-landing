@@ -49,7 +49,7 @@ function Apply() {
 }
 
 // Reason: sizes of the form frame at scale 1, kept in sync with Apply.css. The form card is 640x676 (14px radius) and sits 40px from the top of its page, so a 54/30 crop leaves an even 10px gap
-const FORM_BOX_HEIGHT = 699
+const FORM_BOX_HEIGHT = 703
 const FRAME_HEIGHT = 770
 const COL_WIDTH = 663
 const FRAME_WIDTH = 768

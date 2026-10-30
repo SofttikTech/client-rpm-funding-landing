@@ -21,7 +21,7 @@
 .rpm-apply-form-col { width: 100%; max-width: 663px; justify-self: end; }
 .rpm-apply-form-col > div { margin-left: auto; }
 .rpm-apply-form { padding: 1.5px; border-radius: 26px; background: conic-gradient(from var(--rpm-angle), rgba(16, 183, 127, 0.75), rgba(110, 231, 183, 0.25), rgba(90, 110, 235, 0.55), rgba(16, 183, 127, 0.25), rgba(16, 183, 127, 0.75)); animation: rpm-apply-spin 8s linear infinite; box-shadow: 0 1px 2px rgba(15, 31, 61, 0.05), 0 32px 64px -24px rgba(15, 31, 61, 0.28); }
-.rpm-apply-form-inner { position: relative; height: 696px; border-radius: 24.5px; overflow: hidden; background: #eff4f9; }
+.rpm-apply-form-inner { position: relative; height: 700px; border-radius: 24.5px; overflow: hidden; background: #eff4f9; }
 /* Reason: the form page paints its own grey backdrop, so the iframe is cropped on every side to leave a thin, even rim around the white card */
 .rpm-apply-frame { position: absolute; top: -30px; left: -54px; width: 768px; height: 770px; border: none; }
 .rpm-apply-fallback { text-align: center; font-size: 13px; margin-top: 16px; color: #6b7280; }
