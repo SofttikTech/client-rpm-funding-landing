@@ -7,8 +7,8 @@ function Apply() {
   const scale = useFitScale(FORM_BOX_HEIGHT, 110)
   const isScaled = scale < 1
   const colStyle = isScaled ? { maxWidth: `${COL_WIDTH * scale}px` } : undefined
-  const innerStyle = isScaled ? { height: `${(FORM_BOX_HEIGHT - 4) * scale}px` } : undefined
-  const frameStyle = isScaled ? { top: `${-CROP * scale}px`, left: `${-CROP * scale}px`, width: `calc((100% + ${2 * CROP * scale}px) / ${scale})`, height: `${FRAME_HEIGHT}px`, transform: `scale(${scale})`, transformOrigin: '0 0' } : undefined
+  const innerStyle = isScaled ? { height: `${(FORM_BOX_HEIGHT - 2) * scale}px` } : undefined
+  const frameStyle = isScaled ? { top: `${-CROP_Y * scale}px`, left: `${-CROP_X * scale}px`, width: `calc((100% + ${2 * CROP_X * scale}px) / ${scale})`, height: `${FRAME_HEIGHT}px`, transform: `scale(${scale})`, transformOrigin: '0 0' } : undefined
 
   return (
     <section className="rpm-apply" id="rpm-apply">
@@ -47,10 +47,11 @@ function Apply() {
 }
 
 // Reason: sizes of the form frame at scale 1, kept in sync with Apply.css
-const FORM_BOX_HEIGHT = 734
+const FORM_BOX_HEIGHT = 696
 const FRAME_HEIGHT = 770
 const COL_WIDTH = 700
-const CROP = 16
+const CROP_X = 36
+const CROP_Y = 34
 const STEPS = [
   { title: 'Fill the short form', text: 'About 30 seconds. No paperwork.' },
   { title: 'We review within hours', text: 'Your advisor checks your application and bank statements.' },
