@@ -11,10 +11,9 @@
 .rpm-hero-logo { font-family: var(--rpm-font-head); font-size: 22px; font-weight: 700; letter-spacing: 0.2px; }
 .rpm-hero-logo b { color: var(--rpm-emerald); font-weight: 700; }
 .rpm-hero-phone { display: inline-flex; align-items: center; gap: 8px; font-weight: 600; font-size: 15px; color: #fff; }
-.rpm-hero-phone-dot { width: 8px; height: 8px; border-radius: 50%; background: var(--rpm-emerald); box-shadow: 0 0 0 4px rgba(16, 183, 127, 0.25); }
 
 .rpm-hero-grid { display: grid; grid-template-columns: 1.3fr 0.7fr; gap: 64px; align-items: center; }
-.rpm-hero-badge { display: inline-flex; align-items: center; gap: 10px; min-width: 250px; background: rgba(16, 183, 127, 0.15); border: 1px solid rgba(16, 183, 127, 0.4); color: #fff; font-size: 13px; font-weight: 600; padding: 6px 14px; border-radius: 40px; margin-bottom: 20px; }
+.rpm-hero-badge { display: block; min-height: 20px; font-size: 13px; font-weight: 600; letter-spacing: 1.6px; text-transform: uppercase; color: #6ee7b7; margin-bottom: 18px; }
 .rpm-hero-title { font-family: var(--rpm-font-head); font-size: clamp(32px, 3vw, 46px); white-space: nowrap; line-height: 1.15; font-weight: 800; margin-bottom: 28px; }
 .rpm-hero-title em { font-style: normal; background: linear-gradient(90deg, var(--rpm-emerald), #6ee7b7); -webkit-background-clip: text; background-clip: text; color: transparent; }
 .rpm-hero-actions { display: flex; align-items: center; flex-wrap: wrap; gap: 16px 20px; margin-bottom: 28px; }
@@ -47,10 +46,8 @@
 .rpm-hero-divider-back { fill: rgba(244, 246, 250, 0.35); }
 .rpm-hero-divider-front { fill: var(--rpm-bg); }
 
-.rpm-hero-badge-dot { flex: none; width: 8px; height: 8px; border-radius: 50%; background: var(--rpm-emerald); box-shadow: 0 0 0 0 rgba(16, 183, 127, 0.6); animation: rpm-hero-live 2s ease-out infinite; }
 .rpm-hero-badge-text { animation: rpm-hero-tag-in 0.8s ease-out both; }
 
-@keyframes rpm-hero-live { 0% { box-shadow: 0 0 0 0 rgba(16, 183, 127, 0.6); } 70% { box-shadow: 0 0 0 9px rgba(16, 183, 127, 0); } 100% { box-shadow: 0 0 0 0 rgba(16, 183, 127, 0); } }
 @keyframes rpm-hero-drift-a { from { transform: translate(0, 0); } to { transform: translate(-90px, 70px); } }
 @keyframes rpm-hero-drift-b { from { transform: translate(0, 0); } to { transform: translate(110px, -60px); } }
 @keyframes rpm-hero-tag-in { from { opacity: 0; transform: translateY(8px); } to { opacity: 1; transform: translateY(0); } }

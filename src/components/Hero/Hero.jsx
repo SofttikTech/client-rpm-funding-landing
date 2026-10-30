@@ -1,5 +1,5 @@
 import { useEffect, useRef, useState } from 'react'
-import { UtensilsCrossed, Scissors, Sparkles, HardHat, ShoppingBag } from 'lucide-react'
+import { UtensilsCrossed, Scissors, Sparkles, HardHat, ShoppingBag, Phone } from 'lucide-react'
 import { PHONE_DISPLAY, PHONE_HREF } from '../../config'
 import './Hero.css'
 
@@ -39,14 +39,14 @@ function Hero({ onApply }) {
         <header className="rpm-hero-top">
           <span className="rpm-hero-logo">RPM<b>Funding</b> Group</span>
           <a className="rpm-hero-phone" href={PHONE_HREF}>
-            <i className="rpm-hero-phone-dot" />
+            <Phone size={16} strokeWidth={1.9} aria-hidden="true" />
             {PHONE_DISPLAY}
           </a>
         </header>
 
         <div className="rpm-hero-grid">
           <div className="rpm-hero-copy">
-            <span className="rpm-hero-badge"><i className="rpm-hero-badge-dot" /><span className="rpm-hero-badge-text" key={index}>{PHOTOS[index]['audience']}</span></span>
+            <span className="rpm-hero-badge"><span className="rpm-hero-badge-text" key={index}>{PHOTOS[index]['audience']}</span></span>
             <h1 className="rpm-hero-title">Get funded fast. <em>Repay as you sell.</em></h1>
             <div className="rpm-hero-actions">
               <button type="button" className="rpm-btn rpm-btn-pulse" onClick={onApply}>See if I qualify <i className="rpm-hero-arrow">→</i></button>
