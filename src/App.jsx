@@ -1,12 +1,12 @@
 import Hero from './components/Hero/Hero'
-import Funnel from './components/Funnel/Funnel'
+import Apply from './components/Apply/Apply'
 import FinalCta from './components/FinalCta/FinalCta'
 
 function App() {
   return (
     <main className="rpm-page">
       <Hero />
-      <Funnel />
+      <Apply />
       <FinalCta />
     </main>
   )

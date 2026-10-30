@@ -1,0 +1,26 @@
+.rpm-apply { padding: 40px 0 96px; background: var(--rpm-bg); }
+.rpm-apply-grid { display: grid; grid-template-columns: 0.9fr 1.1fr; gap: 64px; align-items: start; }
+.rpm-apply-eyebrow { display: inline-block; font-size: 13px; font-weight: 700; letter-spacing: 1px; text-transform: uppercase; color: var(--rpm-emerald-dark); margin-bottom: 10px; }
+.rpm-apply-title { font-family: var(--rpm-font-head); font-size: 38px; line-height: 1.15; color: var(--rpm-text-dark); margin-bottom: 32px; }
+.rpm-apply-steps { list-style: none; display: flex; flex-direction: column; gap: 22px; margin-bottom: 32px; }
+.rpm-apply-step { display: flex; gap: 16px; }
+.rpm-apply-step-num { flex: none; display: flex; align-items: center; justify-content: center; width: 38px; height: 38px; border-radius: 50%; background: var(--rpm-navy); color: var(--rpm-emerald); font-family: var(--rpm-font-head); font-weight: 700; font-size: 17px; }
+.rpm-apply-step-title { font-size: 17px; color: var(--rpm-text-dark); margin-bottom: 2px; }
+.rpm-apply-step-text { font-size: 15px; }
+.rpm-apply-assure { list-style: none; display: flex; flex-wrap: wrap; gap: 10px 22px; padding-top: 24px; border-top: 1px solid var(--rpm-border); font-size: 14px; font-weight: 600; color: var(--rpm-text-dark); }
+.rpm-apply-assure-item::before { content: '✓'; color: var(--rpm-emerald-dark); margin-right: 7px; }
+
+.rpm-apply-form { background: #fff; border-radius: 20px; box-shadow: 0 24px 70px rgba(16, 24, 40, 0.12); overflow: hidden; border-top: 5px solid var(--rpm-emerald); }
+.rpm-apply-frame { display: block; width: 100%; height: 820px; border: none; }
+
+.rpm-apply-fallback { text-align: center; font-size: 13px; padding: 10px 16px 16px; }
+.rpm-apply-fallback-link { color: var(--rpm-emerald-dark); font-weight: 600; text-decoration: underline; }
+
+@media (max-width: 960px) {
+  .rpm-apply-grid { grid-template-columns: minmax(0, 1fr); gap: 40px; }
+  .rpm-apply-title { font-size: 30px; }
+}
+@media (max-width: 500px) {
+  .rpm-apply { padding-bottom: 64px; }
+  .rpm-apply-frame { height: 900px; }
+}

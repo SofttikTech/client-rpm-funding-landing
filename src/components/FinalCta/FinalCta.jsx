@@ -1,5 +1,5 @@
 import { useState } from 'react'
-import { FORM_URL, PHONE_DISPLAY, PHONE_HREF } from '../../config'
+import { PHONE_DISPLAY, PHONE_HREF } from '../../config'
 import './FinalCta.css'
 
 function FinalCta() {
@@ -8,10 +8,23 @@ function FinalCta() {
   return (
     <section className="rpm-final">
       <div className="rpm-container">
+        <div className="rpm-final-industries">
+          <h2 className="rpm-final-industries-title">Built for businesses that get paid every day</h2>
+          <p className="rpm-final-industries-sub">Repayment is a small share of your daily sales, so it flexes with slow and busy weeks.</p>
+          <div className="rpm-final-industries-grid">
+            {INDUSTRIES.map(({ title, text }) => (
+              <div key={title} className="rpm-final-industry">
+                <h3 className="rpm-final-industry-title">{title}</h3>
+                <p className="rpm-final-industry-text">{text}</p>
+              </div>
+            ))}
+          </div>
+        </div>
+
         <div className="rpm-final-banner">
           <h2 className="rpm-final-banner-title">Keep your doors open and your business growing.</h2>
           <p className="rpm-final-banner-sub">Apply in 2 minutes. No obligation, no hard credit pull.</p>
-          <a className="rpm-btn" href={FORM_URL}>Get funded today →</a>
+          <a className="rpm-btn" href="#rpm-apply">Get funded today →</a>
           <p className="rpm-final-banner-call">Prefer to talk? Call <a href={PHONE_HREF}>{PHONE_DISPLAY}</a></p>
         </div>
 
@@ -36,6 +49,13 @@ function FinalCta() {
     </section>
   )
 }
+
+const INDUSTRIES = [
+  { title: 'Restaurants and food service', text: 'Restock inventory, cover payroll, fix equipment or open a second location.' },
+  { title: 'Salons, parlors and beauty', text: 'Upgrade chairs and products, hire stylists or expand your space.' },
+  { title: 'Med spas and healthcare', text: 'Buy new equipment, grow your treatment menu and fund marketing.' },
+  { title: 'Construction and contractors', text: 'Cover materials and crew costs while you wait on client payments.' }
+]
 
 const FAQS = [
   { question: 'What is a merchant cash advance?', answer: 'It is working capital based on your business revenue. Repayment is a fixed percentage of your daily sales, so payments move with your business.' },
