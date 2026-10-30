@@ -142,7 +142,13 @@ function Hero({ onApply }) {
           </linearGradient>
         </defs>
         {[80, 160, 240].map((y) => <line key={y} className="rpm-hero-chart-grid" x1="0" x2="960" y1={y} y2={y} />)}
-        {CHART_BARS.map((h, i) => <rect key={i} className="rpm-hero-chart-bar" style={{ animationDelay: `${0.15 + i * 0.09}s` }} x={36 + i * 76} y={310 - h} width="38" height={h} rx="4" fill="url(#rpm-chart-bar)" />)}
+        {CHART_BARS.map((h, i) => (
+          <g key={i} className="rpm-hero-chart-bar" style={{ animationDelay: `${0.15 + i * 0.09}s` }}>
+            <rect x={44 + i * 76} y={310 - h} width="30" height={h} rx="5" fill="url(#rpm-chart-bar)" />
+            <rect className="rpm-hero-chart-cap" x={44 + i * 76} y={310 - h} width="30" height="2.5" rx="1.25" />
+          </g>
+        ))}
+        <path className="rpm-hero-chart-ghost" d={CHART_GHOST} fill="none" strokeWidth="1.4" strokeLinecap="round" vectorEffect="non-scaling-stroke" />
         <path className="rpm-hero-chart-area" d={`${CHART_LINE} L945 320 L20 320 Z`} fill="url(#rpm-chart-area)" />
         <path className="rpm-hero-chart-line" d={CHART_LINE} pathLength="1" fill="none" stroke="url(#rpm-chart-line)" strokeWidth="2.4" strokeLinecap="round" vectorEffect="non-scaling-stroke" />
       </svg>
@@ -157,6 +163,7 @@ function Hero({ onApply }) {
 }
 
 const CHART_BARS = [44, 68, 60, 98, 90, 136, 126, 170, 158, 214, 198, 262]
+const CHART_GHOST = 'M20 300 C170 292 230 270 330 258 S470 246 560 214 S720 178 810 140 S910 96 945 78'
 const CHART_LINE = 'M20 285 C150 272 190 242 290 226 S430 214 520 168 S690 128 780 78 S900 28 945 12'
 const ROTATE_MS = 4500
 const STATS = [
