@@ -1,5 +1,7 @@
-.rpm-modal { position: fixed; inset: 0; z-index: 100; display: flex; align-items: center; justify-content: center; padding: 16px; background: rgba(7, 16, 34, 0.72); backdrop-filter: blur(6px); animation: rpm-modal-fade 0.3s ease-out both; }
-.rpm-modal-panel { position: relative; display: grid; grid-template-columns: minmax(0, 1.2fr) minmax(0, 0.8fr); width: 100%; max-width: 1120px; background: #fff; border-radius: 28px; overflow: hidden; box-shadow: 0 40px 120px rgba(0, 0, 0, 0.5); animation: rpm-modal-pop 0.4s cubic-bezier(0.2, 0.9, 0.3, 1.1) both; }
+.rpm-modal { position: fixed; inset: 0; z-index: 100; display: flex; align-items: center; justify-content: center; padding: 16px; background: rgba(7, 16, 34, 0.72); backdrop-filter: blur(6px); visibility: hidden; opacity: 0; pointer-events: none; }
+.rpm-modal.is-open { visibility: visible; opacity: 1; pointer-events: auto; animation: rpm-modal-fade 0.3s ease-out both; }
+.rpm-modal-panel { position: relative; display: grid; grid-template-columns: minmax(0, 1.2fr) minmax(0, 0.8fr); width: 100%; max-width: 1120px; background: #fff; border-radius: 28px; overflow: hidden; box-shadow: 0 40px 120px rgba(0, 0, 0, 0.5); }
+.rpm-modal.is-open .rpm-modal-panel { animation: rpm-modal-pop 0.4s cubic-bezier(0.2, 0.9, 0.3, 1.1) both; }
 .rpm-modal-close { position: absolute; top: 14px; right: 14px; z-index: 3; width: 38px; height: 38px; border: 1px solid rgba(255, 255, 255, 0.3); border-radius: 50%; background: rgba(255, 255, 255, 0.12); color: #fff; font-size: 22px; line-height: 1; transition: all 0.3s ease-in-out; }
 .rpm-modal-close:hover { background: rgba(255, 255, 255, 0.25); }
 
@@ -25,6 +27,15 @@
 .rpm-modal-amount b { font-size: 26px; font-weight: 700; color: #6ee7b7; }
 .rpm-modal-fact { font-size: 13px; color: rgba(255, 255, 255, 0.7); }
 
+.rpm-modal-loader { position: absolute; inset: 0; z-index: 2; display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 18px; background: #eff4f9; transition: opacity 0.5s ease-in-out, visibility 0.5s; }
+.rpm-modal-loader.is-done { opacity: 0; visibility: hidden; pointer-events: none; }
+.rpm-modal-loader-chart { width: 150px; height: auto; overflow: visible; }
+.rpm-modal-loader-bar { fill: rgba(16, 183, 127, 0.35); transform-box: fill-box; transform-origin: bottom; animation: rpm-modal-bar 1.6s ease-in-out infinite; }
+.rpm-modal-loader-line { stroke: #0b9768; stroke-dasharray: 1; stroke-dashoffset: 1; animation: rpm-modal-line 1.6s ease-in-out infinite; }
+.rpm-modal-loader-text { font-size: 14px; font-weight: 500; letter-spacing: 0.3px; color: #4b5563; }
+@keyframes rpm-modal-bar { 0% { transform: scaleY(0.15); } 45%, 80% { transform: scaleY(1); } 100% { transform: scaleY(0.15); } }
+@keyframes rpm-modal-line { 0% { stroke-dashoffset: 1; } 55%, 85% { stroke-dashoffset: 0; } 100% { stroke-dashoffset: -1; } }
+
 @keyframes rpm-modal-fade { from { opacity: 0; } to { opacity: 1; } }
 @keyframes rpm-modal-pop { from { opacity: 0; transform: translateY(24px) scale(0.96); } to { opacity: 1; transform: translateY(0) scale(1); } }
 @keyframes rpm-modal-drift { from { transform: translate(0, 0); } to { transform: translate(-50px, 60px); } }
@@ -40,5 +51,6 @@
 }
 
 @media (prefers-reduced-motion: reduce) {
-  .rpm-modal, .rpm-modal-panel, .rpm-modal-glow { animation: none; }
+  .rpm-modal, .rpm-modal.is-open, .rpm-modal.is-open .rpm-modal-panel, .rpm-modal-glow { animation: none; }
+  .rpm-modal-loader-bar, .rpm-modal-loader-line { animation: none; transform: none; stroke-dashoffset: 0; }
 }

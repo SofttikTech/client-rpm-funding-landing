@@ -10,3 +10,6 @@ export const AUTO_OPEN_DELAY_MS = 8000;
 export const AUTO_OPEN_COOLDOWN_MS = 24 * 60 * 60 * 1000;
 export const AUTO_OPEN_ON_MOBILE = false;
 export const AUTO_OPEN_STORAGE_KEY = 'rpm-popup-shown-at';
+
+// Popup form preload: the form frame loads in the background this long after the page loads, so the popup opens instantly.
+export const PRELOAD_DELAY_MS = 1200;
