@@ -22,17 +22,25 @@ function LeadModal({ isOpen, onClose }) {
       <div className="rpm-modal-panel" onClick={(e) => e.stopPropagation()}>
         <button type="button" className="rpm-modal-close" aria-label="Close" onClick={onClose}>×</button>
 
-        <aside className="rpm-modal-pitch">
-          <span className="rpm-modal-badge">Free application · About 2 minutes</span>
-          <h2 className="rpm-modal-title">You are 2 minutes away from your funding decision</h2>
-          <p className="rpm-modal-text">Tell us a little about your business. A funding advisor reviews your application within hours.</p>
-          <ul className="rpm-modal-list">
-            {PERKS.map((item) => <li key={item} className="rpm-modal-perk">{item}</li>)}
+        <aside className="rpm-modal-visual">
+          <span className="rpm-modal-glow" />
+          <img className="rpm-modal-photo" src="/hero-owner.jpg" alt="" />
+          <span className="rpm-modal-eyebrow">Working capital up to</span>
+          <strong className="rpm-modal-amount">$5M</strong>
+          <ul className="rpm-modal-proof">
+            {PROOF.map((item) => <li key={item} className="rpm-modal-proof-item">{item}</li>)}
           </ul>
-          <p className="rpm-modal-foot">Secure and confidential. Applying is free and there is no obligation.</p>
         </aside>
 
-        <div className="rpm-modal-form">
+        <div className="rpm-modal-main">
+          <div className="rpm-modal-head">
+            <span className="rpm-modal-badge">Free application · About 2 minutes</span>
+            <h2 className="rpm-modal-title">Your funding decision is <em>2 minutes away.</em></h2>
+            <p className="rpm-modal-text">Tell us about your business. A funding advisor reviews it within hours.</p>
+            <ul className="rpm-modal-perks">
+              {PERKS.map((item) => <li key={item} className="rpm-modal-perk">{item}</li>)}
+            </ul>
+          </div>
           <iframe className="rpm-modal-frame" src={FORM_URL} title="RPM Funding application form" />
         </div>
       </div>
@@ -40,6 +48,7 @@ function LeadModal({ isOpen, onClose }) {
   )
 }
 
-const PERKS = ['Funds in as little as 24 hours', 'No hard credit pull required', 'No collateral, all credit types welcome', 'A dedicated advisor guides you']
+const PROOF = ['$500MM+ funded to date', '5,000+ businesses served', 'Miami, FL since 2019']
+const PERKS = ['Funds in as little as 24 hours', 'No hard credit pull required', 'No collateral, all credit welcome']
 
 export default LeadModal
