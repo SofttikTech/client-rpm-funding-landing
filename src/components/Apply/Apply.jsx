@@ -8,7 +8,7 @@ function Apply() {
   const scale = useFitScale(FORM_BOX_HEIGHT, 110)
   const isScaled = scale < 1
   const colStyle = isScaled ? { maxWidth: `${COL_WIDTH * scale}px` } : undefined
-  const innerStyle = isScaled ? { height: `${(FORM_BOX_HEIGHT - 2) * scale}px` } : undefined
+  const innerStyle = isScaled ? { height: `${(FORM_BOX_HEIGHT - 3) * scale}px` } : undefined
   const frameStyle = isScaled ? { top: `${-CROP_Y * scale}px`, left: `${-CROP_X * scale}px`, width: `${FRAME_WIDTH}px`, height: `${FRAME_HEIGHT}px`, transform: `scale(${scale})`, transformOrigin: '0 0' } : undefined
 
   return (
@@ -20,7 +20,7 @@ function Apply() {
             <ol className="rpm-apply-steps">
               {STEPS.map(({ Icon, title, text }, index) => (
                 <li key={title} className="rpm-apply-step">
-                  <span className="rpm-apply-step-num">{index + 1}</span>
+                  <span className="rpm-apply-step-num">0{index + 1}</span>
                   <span className="rpm-apply-step-icon"><Icon size={30} strokeWidth={1.6} aria-hidden="true" /></span>
                   <div className="rpm-apply-step-body">
                     <h3 className="rpm-apply-step-title">{title}</h3>
@@ -48,13 +48,13 @@ function Apply() {
   )
 }
 
-// Reason: sizes of the form frame at scale 1, kept in sync with Apply.css
-const FORM_BOX_HEIGHT = 696
+// Reason: sizes of the form frame at scale 1, kept in sync with Apply.css. The form card is 640x676 (14px radius) and sits 40px from the top of its page, so a 54/30 crop leaves an even 10px gap
+const FORM_BOX_HEIGHT = 699
 const FRAME_HEIGHT = 770
-const COL_WIDTH = 658
+const COL_WIDTH = 663
 const FRAME_WIDTH = 768
-const CROP_X = 56
-const CROP_Y = 34
+const CROP_X = 54
+const CROP_Y = 30
 const STEPS = [
   { Icon: FileText, title: 'Fill the short form', text: 'About 30 seconds. No paperwork.' },
   { Icon: Clock, title: 'We review within hours', text: 'Your advisor checks your application and bank statements.' },

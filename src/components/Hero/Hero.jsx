@@ -74,7 +74,7 @@ function Hero({ onApply }) {
       <span className="rpm-hero-glow rpm-hero-glow-b" />
       <div className="rpm-container rpm-hero-inner">
         <header className="rpm-hero-top">
-          <span className="rpm-hero-logo"><i className="rpm-hero-logo-mark">R</i><span>RPM<b>Funding</b> Group</span></span>
+          <span className="rpm-hero-logo">RPM<b>Funding</b> Group</span>
           <a className="rpm-hero-phone" href={PHONE_HREF}>
             <Phone size={16} strokeWidth={1.9} aria-hidden="true" />
             {PHONE_DISPLAY}
