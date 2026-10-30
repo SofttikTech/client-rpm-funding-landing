@@ -30,6 +30,10 @@ function Hero() {
           </div>
 
           <div className="rpm-hero-card" id="rpm-start">
+            <div className="rpm-hero-seal">
+              <strong className="rpm-hero-seal-value">$500MM+</strong>
+              <span className="rpm-hero-seal-label">Funded to date</span>
+            </div>
             <p className="rpm-hero-card-step">Step 1 of 2 · About 2 minutes</p>
             <h2 className="rpm-hero-card-title">See what your business can get</h2>
             <label className="rpm-hero-label" htmlFor="rpm-industry">Your business type</label>
@@ -50,14 +54,22 @@ function Hero() {
         </div>
 
         <div className="rpm-hero-trust">
-          {TRUST.map(({ value, label }) => (
-            <div key={label} className="rpm-hero-trust-item">
-              <strong className="rpm-hero-trust-value">{value}</strong>
-              <span className="rpm-hero-trust-label">{label}</span>
-            </div>
-          ))}
+          <div className="rpm-hero-trust-stats">
+            {TRUST.map(({ value, label }) => (
+              <div key={label} className="rpm-hero-trust-item">
+                <strong className="rpm-hero-trust-value">{value}</strong>
+                <span className="rpm-hero-trust-label">{label}</span>
+              </div>
+            ))}
+          </div>
+          <div className="rpm-hero-trust-owners">
+            <span className="rpm-hero-trust-owners-label">Trusted by owners of</span>
+            {OWNERS.map((item) => <span key={item} className="rpm-hero-trust-pill">{item}</span>)}
+          </div>
         </div>
       </div>
+
+      <a className="rpm-hero-tab" href="#rpm-start">Check my options</a>
     </section>
   )
 }
@@ -65,6 +77,7 @@ function Hero() {
 const AMOUNTS = ['$5K - $25K', '$25K - $100K', '$100K - $250K', '$250K+']
 const INDUSTRIES = ['Restaurant / Food Service', 'Salon / Beauty / Parlor', 'Med Spa / Healthcare', 'Construction / Contracting', 'Retail', 'Other']
 const ASSURANCES = ['No hard credit pull', 'Free, no obligation', 'Secure and confidential']
+const OWNERS = ['Restaurants', 'Salons and parlors', 'Med spas', 'Contractors', 'Retail shops']
 const TRUST = [
   { value: '$500MM+', label: 'Funded to date' },
   { value: '5,000+', label: 'Businesses served' },

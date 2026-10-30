@@ -11,9 +11,9 @@
 .rpm-hero-title em { font-style: normal; color: var(--rpm-emerald); }
 .rpm-hero-sub { font-size: 20px; color: rgba(255, 255, 255, 0.82); max-width: 480px; margin-bottom: 36px; }
 
-.rpm-hero-card { background: #fff; color: var(--rpm-text); border-radius: 20px; padding: 36px 32px; box-shadow: 0 30px 80px rgba(0, 0, 0, 0.35); }
-.rpm-hero-card-step { font-size: 12px; font-weight: 700; letter-spacing: 0.6px; text-transform: uppercase; color: var(--rpm-emerald-dark); margin-bottom: 8px; }
-.rpm-hero-card-title { font-family: var(--rpm-font-head); font-size: 28px; line-height: 1.2; color: var(--rpm-text-dark); margin-bottom: 20px; }
+.rpm-hero-card { position: relative; background: #fff; color: var(--rpm-text); border-radius: 20px; padding: 36px 32px; box-shadow: 0 30px 80px rgba(0, 0, 0, 0.35); }
+.rpm-hero-card-step { padding-right: 80px; font-size: 12px; font-weight: 700; letter-spacing: 0.6px; text-transform: uppercase; color: var(--rpm-emerald-dark); margin-bottom: 8px; }
+.rpm-hero-card-title { font-family: var(--rpm-font-head); font-size: 28px; line-height: 1.2; color: var(--rpm-text-dark); margin-bottom: 20px; padding-top: 12px; }
 .rpm-hero-label { display: block; font-size: 13px; font-weight: 600; color: var(--rpm-text-dark); margin-bottom: 8px; }
 .rpm-hero-select { width: 100%; font-family: inherit; font-size: 15px; font-weight: 500; color: var(--rpm-text-dark); background: var(--rpm-bg); border: 2px solid var(--rpm-border); border-radius: 10px; padding: 12px 14px; margin-bottom: 18px; }
 .rpm-hero-select:focus { outline: none; border-color: var(--rpm-emerald); }
@@ -31,7 +31,18 @@
 .rpm-hero-assure-item { font-size: 12.5px; }
 .rpm-hero-assure-item::before { content: '✓'; color: var(--rpm-emerald-dark); font-weight: 700; margin-right: 5px; }
 
-.rpm-hero-trust { display: grid; grid-template-columns: repeat(4, 1fr); gap: 16px; margin-top: 64px; padding-top: 28px; border-top: 1px solid rgba(255, 255, 255, 0.14); }
+.rpm-hero-trust { margin-top: 64px; padding-top: 28px; border-top: 1px solid rgba(255, 255, 255, 0.14); }
+.rpm-hero-trust-stats { display: grid; grid-template-columns: repeat(4, 1fr); gap: 16px; margin-bottom: 28px; }
+.rpm-hero-trust-owners { display: flex; flex-wrap: wrap; align-items: center; justify-content: center; gap: 10px; }
+.rpm-hero-trust-owners-label { font-size: 13px; color: rgba(255, 255, 255, 0.6); margin-right: 6px; }
+.rpm-hero-trust-pill { font-size: 13px; font-weight: 600; color: #fff; border: 1px solid rgba(255, 255, 255, 0.25); background: rgba(255, 255, 255, 0.06); padding: 7px 16px; border-radius: 40px; }
+
+.rpm-hero-seal { position: absolute; top: -44px; right: -22px; width: 108px; height: 108px; border-radius: 50%; background: #fff; border: 5px solid var(--rpm-emerald); box-shadow: 0 14px 40px rgba(0, 0, 0, 0.35); display: flex; flex-direction: column; align-items: center; justify-content: center; text-align: center; }
+.rpm-hero-seal-value { font-family: var(--rpm-font-head); font-size: 19px; line-height: 1.1; color: var(--rpm-navy); }
+.rpm-hero-seal-label { font-size: 11px; font-weight: 600; color: var(--rpm-text); }
+
+.rpm-hero-tab { position: fixed; right: 0; top: 50%; transform: translateY(-50%); writing-mode: vertical-rl; background: var(--rpm-emerald); color: #fff; font-size: 13px; font-weight: 700; letter-spacing: 1.4px; text-transform: uppercase; padding: 22px 12px; border-radius: 10px 0 0 10px; box-shadow: 0 8px 24px rgba(0, 0, 0, 0.25); z-index: 10; transition: all 0.3s ease-in-out; }
+.rpm-hero-tab:hover { background: var(--rpm-emerald-dark); padding-right: 16px; }
 .rpm-hero-trust-item { display: flex; flex-direction: column; text-align: center; }
 .rpm-hero-trust-value { font-family: var(--rpm-font-head); font-size: 30px; color: #fff; }
 .rpm-hero-trust-label { font-size: 13px; color: rgba(255, 255, 255, 0.6); }
@@ -42,7 +53,11 @@
 }
 @media (max-width: 500px) {
   .rpm-hero-title { font-size: 34px; }
-  .rpm-hero-trust { grid-template-columns: 1fr 1fr; gap: 20px 12px; margin-top: 44px; }
+  .rpm-hero-trust { margin-top: 44px; }
+  .rpm-hero-trust-stats { grid-template-columns: 1fr 1fr; gap: 20px 12px; }
+  .rpm-hero-seal { right: 10px; top: -48px; width: 100px; height: 100px; }
+  .rpm-hero-seal-value { font-size: 18px; }
+  .rpm-hero-tab { display: none; }
   .rpm-hero-trust-value { font-size: 24px; }
   .rpm-hero-card { padding: 28px 22px; }
 }
