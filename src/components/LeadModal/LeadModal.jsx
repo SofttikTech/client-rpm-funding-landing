@@ -40,8 +40,7 @@ function LeadModal({ isOpen, onClose }) {
           <span className="rpm-modal-glow" />
           <div className="rpm-modal-message">
             <span className="rpm-modal-badge">Free application · About 2 minutes</span>
-            <h2 className="rpm-modal-title">Your funding decision is <em>2 minutes away.</em></h2>
-            <p className="rpm-modal-text">Tell us about your business. A funding advisor reviews it within hours.</p>
+            <h2 className="rpm-modal-title">Get your funding decision in <em>2 minutes</em></h2>
             <ul className="rpm-modal-perks">
               {PERKS.map((item) => <li key={item} className="rpm-modal-perk">{item}</li>)}
             </ul>
@@ -54,9 +53,7 @@ function LeadModal({ isOpen, onClose }) {
               <strong className="rpm-modal-amount">$5M</strong>
             </div>
           </div>
-          <ul className="rpm-modal-facts">
-            {FACTS.map((item) => <li key={item} className="rpm-modal-fact">{item}</li>)}
-          </ul>
+          <p className="rpm-modal-fact">Trusted by 5,000+ businesses · $500MM+ funded</p>
         </aside>
       </div>
     </div>
@@ -64,10 +61,9 @@ function LeadModal({ isOpen, onClose }) {
 }
 
 // Reason: natural rendered height of the SellAgent form page (9 fields, consent, submit), measured from the live form
-const FORM_HEIGHT = 770
+const FORM_HEIGHT = 762
 const STACKED = 'stacked'
-const PERKS = ['Funds in as little as 24 hours', 'No hard credit pull required', 'No collateral, all credit welcome']
-const FACTS = ['$500MM+ funded to date', '5,000+ businesses served', 'Miami, FL since 2019']
+const PERKS = ['Funds in as little as 24 hours', 'No hard credit pull, no collateral', 'All credit types welcome']
 
 /**
  * Scale that makes the whole form fit the viewport so it never needs scrolling.

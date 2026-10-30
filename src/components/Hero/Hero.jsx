@@ -29,7 +29,6 @@ function Hero({ onApply }) {
           <div className="rpm-hero-copy">
             <span className="rpm-hero-badge">Funds in as little as 24 hours</span>
             <h1 className="rpm-hero-title">Fast working capital, <em>repaid from your daily sales</em></h1>
-            <p className="rpm-hero-sub">$5K to $5M. No collateral, no hard credit pull, all credit welcome.</p>
             <div className="rpm-hero-actions">
               <button type="button" className="rpm-btn rpm-btn-pulse" onClick={onApply}>See if I qualify <i className="rpm-hero-arrow">→</i></button>
               <span className="rpm-hero-note">Takes about 2 minutes</span>
@@ -45,7 +44,7 @@ function Hero({ onApply }) {
                 </div>
                 <div className="rpm-hero-trust-text">
                   <strong className="rpm-hero-trust-headline">Trusted by <b>5,000+</b> business owners</strong>
-                  <span className="rpm-hero-trust-sub">Miami, FL based, funding businesses since 2019</span>
+                  <span className="rpm-hero-trust-sub">Miami, FL · Since 2019</span>
                 </div>
               </div>
               <div className="rpm-hero-trust-stats">
