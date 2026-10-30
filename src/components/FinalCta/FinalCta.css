@@ -8,7 +8,7 @@
 .rpm-final-cta-title em { font-style: normal; color: #6ee7b7; }
 .rpm-final-cta-sub { font-size: 17px; color: rgba(255, 255, 255, 0.82); margin-bottom: 32px; }
 .rpm-final-cta-actions { display: flex; flex-wrap: wrap; justify-content: center; gap: 14px; margin-bottom: 26px; }
-.rpm-final-cta-main { font-size: 18px; padding: 22px 42px; }
+.rpm-final-cta-main { font-size: 19px; padding: 24px 46px; }
 .rpm-final-cta-actions .rpm-btn-ghost { padding: 16px 26px; }
 .rpm-final-cta-call { display: inline-flex; align-items: center; gap: 8px; font-size: 14px; color: rgba(255, 255, 255, 0.75); }
 .rpm-final-cta-call b { color: #6ee7b7; font-weight: 600; }

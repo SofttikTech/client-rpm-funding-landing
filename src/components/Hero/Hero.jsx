@@ -1,5 +1,6 @@
 import { useEffect, useRef, useState } from 'react'
-import { ShieldCheck, Phone, ArrowRight } from 'lucide-react'
+import { ShieldCheck, Phone } from 'lucide-react'
+import CtaButton from '../CtaButton/CtaButton'
 import { PHONE_DISPLAY, PHONE_HREF } from '../../config'
 import './Hero.css'
 
@@ -83,7 +84,7 @@ function Hero({ onApply }) {
           <div className="rpm-hero-copy">
             <h1 className="rpm-hero-title">Get funded fast. <em>Repay as you sell.</em></h1>
             <div className="rpm-hero-actions">
-              <button type="button" className="rpm-btn" onClick={onApply}>See if I qualify <span className="rpm-btn-icon"><ArrowRight size={20} strokeWidth={1.8} aria-hidden="true" /></span></button>
+              <CtaButton onClick={onApply}>See if I qualify</CtaButton>
               <span className="rpm-hero-note">Takes about 30 seconds</span>
             </div>
             <div className="rpm-hero-trust">
