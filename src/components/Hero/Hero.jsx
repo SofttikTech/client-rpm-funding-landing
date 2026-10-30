@@ -83,7 +83,7 @@ function Hero({ onApply }) {
           <div className="rpm-hero-copy">
             <h1 className="rpm-hero-title">Get funded fast. <em>Repay as you sell.</em></h1>
             <div className="rpm-hero-actions">
-              <button type="button" className="rpm-btn rpm-btn-pulse" onClick={onApply}>See if I qualify <span className="rpm-btn-icon"><ArrowRight size={20} strokeWidth={2.2} aria-hidden="true" /></span></button>
+              <button type="button" className="rpm-btn" onClick={onApply}>See if I qualify <span className="rpm-btn-icon"><ArrowRight size={20} strokeWidth={1.8} aria-hidden="true" /></span></button>
               <span className="rpm-hero-note">Takes about 30 seconds</span>
             </div>
             <div className="rpm-hero-trust">
