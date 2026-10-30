@@ -5,6 +5,7 @@ import './Hero.css'
 
 function Hero({ onApply }) {
   const [index, setIndex] = useState(0)
+  const heroRef = useRef(null)
   const frameRef = useRef(null)
   const glowRef = useRef(null)
 
@@ -16,23 +17,32 @@ function Hero({ onApply }) {
   }, [])
 
   useEffect(() => {
-    if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) return undefined
+    const maxCurve = window.innerWidth <= 500 ? 40 : 110
+    // Reason: reduced-motion visitors get a fixed gentle curve instead of the scroll animation
+    if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
+      if (heroRef.current) heroRef.current.style.setProperty('--rpm-curve', `${maxCurve * 0.5}`)
+      return undefined
+    }
     let frame = 0
-    // Reason: light parallax, the photo drifts up slower and the glow faster than the page scroll
+    // Reason: the bottom edge starts flat so the first screen is a clean block, then curves in as the page scrolls; the photo drifts up slower and the glow faster than the scroll
     const onScroll = () => {
       cancelAnimationFrame(frame)
       frame = requestAnimationFrame(() => {
         const y = Math.min(window.scrollY, 700)
+        const p = Math.min(window.scrollY / (window.innerHeight * 0.45), 1)
+        const eased = p * p * (3 - 2 * p)
+        if (heroRef.current) heroRef.current.style.setProperty('--rpm-curve', `${eased * maxCurve}`)
         if (frameRef.current) frameRef.current.style.transform = `translateY(${y * -0.08}px)`
         if (glowRef.current) glowRef.current.style.transform = `translateY(${y * 0.18}px)`
       })
     }
+    onScroll()
     window.addEventListener('scroll', onScroll, { passive: true })
     return () => { window.removeEventListener('scroll', onScroll); cancelAnimationFrame(frame) }
   }, [])
 
   return (
-    <section className="rpm-hero">
+    <section className="rpm-hero" ref={heroRef}>
       <span className="rpm-hero-glow-wrap" ref={glowRef}><span className="rpm-hero-glow rpm-hero-glow-a" /></span>
       <span className="rpm-hero-glow rpm-hero-glow-b" />
       <div className="rpm-container rpm-hero-inner">
@@ -91,17 +101,6 @@ function Hero({ onApply }) {
         </div>
       </div>
 
-      <svg className="rpm-hero-divider" viewBox="0 0 1440 120" preserveAspectRatio="none" aria-hidden="true">
-        <defs>
-          <linearGradient id="rpm-hero-band" x1="0" x2="1" y1="0" y2="0">
-            <stop offset="0" stopColor="#5a6eeb" stopOpacity="0.22" />
-            <stop offset="0.5" stopColor="#10b77f" stopOpacity="0.28" />
-            <stop offset="1" stopColor="#5a6eeb" stopOpacity="0.22" />
-          </linearGradient>
-        </defs>
-        <path className="rpm-hero-divider-back" d="M0,14 Q720,112 1440,14 L1440,120 L0,120 Z" />
-        <path className="rpm-hero-divider-front" d="M0,38 Q720,116 1440,38 L1440,120 L0,120 Z" />
-      </svg>
     </section>
   )
 }
