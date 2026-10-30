@@ -1,5 +1,5 @@
 import { useEffect, useRef, useState } from 'react'
-import { Phone, ArrowRight } from 'lucide-react'
+import { ShieldCheck, Phone, ArrowRight } from 'lucide-react'
 import { PHONE_DISPLAY, PHONE_HREF } from '../../config'
 import './Hero.css'
 
@@ -87,6 +87,13 @@ function Hero({ onApply }) {
               <span className="rpm-hero-note">Takes about 30 seconds</span>
             </div>
             <div className="rpm-hero-trust">
+              <div className="rpm-hero-trust-top">
+                <span className="rpm-hero-trust-mark"><ShieldCheck size={28} strokeWidth={1.7} aria-hidden="true" /></span>
+                <div className="rpm-hero-trust-text">
+                  <strong className="rpm-hero-trust-headline">Trusted by <b>5,000+</b> business owners</strong>
+                  <span className="rpm-hero-trust-sub">Miami, FL · Since 2019</span>
+                </div>
+              </div>
               <div className="rpm-hero-trust-stats">
                 {STATS.map(({ value, label }) => (
                   <div key={label} className="rpm-hero-trust-stat">
@@ -124,9 +131,8 @@ function Hero({ onApply }) {
 const ROTATE_MS = 4500
 const STATS = [
   { value: '$500MM+', label: 'funded to date' },
-  { value: '5,000+', label: 'businesses' },
-  { value: '24hrs', label: 'avg. funding time' },
-  { value: '2019', label: 'based in Miami, FL' }
+  { value: '5,000+', label: 'businesses served' },
+  { value: '24hrs', label: 'average funding time' }
 ]
 // Reason: one icon per industry RPM serves, in place of customer faces we do not have permission to show
 const SLIDE_WIDTH = 86
