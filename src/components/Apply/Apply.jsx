@@ -8,7 +8,6 @@ function Apply() {
       <div className="rpm-container">
         <div className="rpm-apply-grid">
           <Reveal className="rpm-apply-info">
-            <span className="rpm-apply-eyebrow">How it works</span>
             <h2 className="rpm-apply-title">Your funding decision in 3 simple steps</h2>
             <ol className="rpm-apply-steps">
               {STEPS.map(({ title, text }, index) => (
