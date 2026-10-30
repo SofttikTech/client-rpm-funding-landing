@@ -21,31 +21,35 @@ function Hero() {
           <div className="rpm-hero-copy">
             <span className="rpm-hero-badge">Trusted by 5,000+ businesses</span>
             <h1 className="rpm-hero-title">Fast business funding when <em>you need it most</em></h1>
-            <p className="rpm-hero-sub">Get $5,000 to $5,000,000 in working capital, with approval based on your business revenue. No collateral. No long paperwork.</p>
-            <ul className="rpm-hero-points">
-              {POINTS.map((point) => <li key={point} className="rpm-hero-point">{point}</li>)}
-            </ul>
-            <div className="rpm-hero-stats">
-              {STATS.map(({ value, label }) => (
-                <div key={label} className="rpm-hero-stat">
-                  <strong className="rpm-hero-stat-value">{value}</strong>
-                  <span className="rpm-hero-stat-label">{label}</span>
-                </div>
-              ))}
-            </div>
+            <p className="rpm-hero-sub">$5K to $5M in working capital, based on your revenue. No collateral.</p>
+            <figure className="rpm-hero-quote">
+              <blockquote className="rpm-hero-quote-text">&ldquo;RPM Funding came through with $150,000 in two days.&rdquo;</blockquote>
+              <figcaption className="rpm-hero-quote-by">Marcus Johnson, Restaurant Owner, Atlanta</figcaption>
+            </figure>
           </div>
 
           <div className="rpm-hero-card" id="rpm-start">
-            <p className="rpm-hero-card-step">Step 1 of 2 · Takes about 2 minutes</p>
+            <p className="rpm-hero-card-step">Step 1 of 2 · About 2 minutes</p>
             <h2 className="rpm-hero-card-title">How much funding do you need?</h2>
             <div className="rpm-hero-chips">
               {AMOUNTS.map((item) => (
                 <button key={item} type="button" className={`rpm-hero-chip${item === amount ? ' active' : ''}`} onClick={() => setAmount(item)}>{item}</button>
               ))}
             </div>
-            <a className="rpm-btn rpm-btn-full" href={formLink}>Continue to my application <i className="rpm-hero-arrow">→</i></a>
-            <p className="rpm-hero-card-note">No hard credit pull required. Free, no obligation.</p>
+            <a className="rpm-btn rpm-btn-full" href={formLink}>Check my options <i className="rpm-hero-arrow">→</i></a>
+            <ul className="rpm-hero-assure">
+              {ASSURANCES.map((item) => <li key={item} className="rpm-hero-assure-item">{item}</li>)}
+            </ul>
           </div>
+        </div>
+
+        <div className="rpm-hero-trust">
+          {TRUST.map(({ value, label }) => (
+            <div key={label} className="rpm-hero-trust-item">
+              <strong className="rpm-hero-trust-value">{value}</strong>
+              <span className="rpm-hero-trust-label">{label}</span>
+            </div>
+          ))}
         </div>
       </div>
     </section>
@@ -53,11 +57,12 @@ function Hero() {
 }
 
 const AMOUNTS = ['$5K - $25K', '$25K - $100K', '$100K - $250K', '$250K+']
-const POINTS = ['Simple 2-minute application', 'Funds in as little as 24 hours', 'All credit types welcome']
-const STATS = [
+const ASSURANCES = ['No hard credit pull', 'Free, no obligation', 'Secure and confidential']
+const TRUST = [
   { value: '$500MM+', label: 'Funded to date' },
   { value: '5,000+', label: 'Businesses served' },
-  { value: '24hrs', label: 'Average funding time' }
+  { value: '24hrs', label: 'Average funding time' },
+  { value: 'Since 2019', label: 'Based in Miami, FL' }
 ]
 
 /**

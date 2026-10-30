@@ -9,14 +9,7 @@
 .rpm-hero-badge { display: inline-block; background: rgba(16, 183, 127, 0.15); border: 1px solid rgba(16, 183, 127, 0.4); color: #fff; font-size: 13px; font-weight: 600; padding: 6px 14px; border-radius: 40px; margin-bottom: 22px; }
 .rpm-hero-title { font-family: var(--rpm-font-head); font-size: 56px; line-height: 1.08; font-weight: 800; margin-bottom: 20px; }
 .rpm-hero-title em { font-style: normal; color: var(--rpm-emerald); }
-.rpm-hero-sub { font-size: 18px; color: rgba(255, 255, 255, 0.78); max-width: 540px; margin-bottom: 26px; }
-.rpm-hero-points { list-style: none; display: flex; flex-direction: column; gap: 10px; margin-bottom: 34px; }
-.rpm-hero-point { position: relative; padding-left: 30px; font-weight: 500; }
-.rpm-hero-point::before { content: '✓'; position: absolute; left: 0; top: 1px; width: 20px; height: 20px; border-radius: 50%; background: var(--rpm-emerald); color: #fff; font-size: 12px; font-weight: 700; display: flex; align-items: center; justify-content: center; }
-.rpm-hero-stats { display: flex; gap: 36px; padding-top: 26px; border-top: 1px solid rgba(255, 255, 255, 0.14); }
-.rpm-hero-stat { display: flex; flex-direction: column; }
-.rpm-hero-stat-value { font-family: var(--rpm-font-head); font-size: 30px; color: #fff; }
-.rpm-hero-stat-label { font-size: 13px; color: rgba(255, 255, 255, 0.6); }
+.rpm-hero-sub { font-size: 20px; color: rgba(255, 255, 255, 0.82); max-width: 480px; margin-bottom: 36px; }
 
 .rpm-hero-card { background: #fff; color: var(--rpm-text); border-radius: 20px; padding: 36px 32px; box-shadow: 0 30px 80px rgba(0, 0, 0, 0.35); }
 .rpm-hero-card-step { font-size: 12px; font-weight: 700; letter-spacing: 0.6px; text-transform: uppercase; color: var(--rpm-emerald-dark); margin-bottom: 8px; }
@@ -26,7 +19,19 @@
 .rpm-hero-chip:hover { border-color: var(--rpm-emerald); }
 .rpm-hero-chip.active { border-color: var(--rpm-emerald); background: rgba(16, 183, 127, 0.1); }
 .rpm-hero-arrow { font-style: normal; }
-.rpm-hero-card-note { text-align: center; font-size: 13px; margin-top: 14px; }
+
+.rpm-hero-quote { max-width: 440px; border-left: 3px solid var(--rpm-emerald); padding: 4px 0 4px 18px; }
+.rpm-hero-quote-text { font-family: var(--rpm-font-head); font-size: 20px; line-height: 1.4; color: #fff; margin-bottom: 8px; }
+.rpm-hero-quote-by { font-size: 13px; color: rgba(255, 255, 255, 0.65); }
+
+.rpm-hero-assure { list-style: none; display: flex; flex-wrap: wrap; justify-content: center; gap: 6px 16px; margin-top: 16px; }
+.rpm-hero-assure-item { font-size: 12.5px; }
+.rpm-hero-assure-item::before { content: '✓'; color: var(--rpm-emerald-dark); font-weight: 700; margin-right: 5px; }
+
+.rpm-hero-trust { display: grid; grid-template-columns: repeat(4, 1fr); gap: 16px; margin-top: 64px; padding-top: 28px; border-top: 1px solid rgba(255, 255, 255, 0.14); }
+.rpm-hero-trust-item { display: flex; flex-direction: column; text-align: center; }
+.rpm-hero-trust-value { font-family: var(--rpm-font-head); font-size: 30px; color: #fff; }
+.rpm-hero-trust-label { font-size: 13px; color: rgba(255, 255, 255, 0.6); }
 
 @media (max-width: 960px) {
   .rpm-hero-grid { grid-template-columns: 1fr; gap: 40px; }
@@ -34,7 +39,7 @@
 }
 @media (max-width: 500px) {
   .rpm-hero-title { font-size: 34px; }
-  .rpm-hero-stats { gap: 20px; }
-  .rpm-hero-stat-value { font-size: 24px; }
+  .rpm-hero-trust { grid-template-columns: 1fr 1fr; gap: 20px 12px; margin-top: 44px; }
+  .rpm-hero-trust-value { font-size: 24px; }
   .rpm-hero-card { padding: 28px 22px; }
 }
