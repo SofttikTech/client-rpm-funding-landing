@@ -7,8 +7,8 @@ function Apply() {
       <div className="rpm-container">
         <div className="rpm-apply-grid">
           <div className="rpm-apply-info">
-            <span className="rpm-apply-eyebrow">Apply in 2 minutes</span>
-            <h2 className="rpm-apply-title">Tell us about your business. Get a decision fast.</h2>
+            <span className="rpm-apply-eyebrow">How it works</span>
+            <h2 className="rpm-apply-title">Your funding decision in 3 simple steps</h2>
             <ol className="rpm-apply-steps">
               {STEPS.map(({ title, text }, index) => (
                 <li key={title} className="rpm-apply-step">
@@ -20,12 +20,11 @@ function Apply() {
                 </li>
               ))}
             </ol>
-            <ul className="rpm-apply-assure">
-              {ASSURANCES.map((item) => <li key={item} className="rpm-apply-assure-item">{item}</li>)}
-            </ul>
+            <a className="rpm-apply-arrow" href="#rpm-apply-form">Start with the form <i className="rpm-apply-arrow-icon">→</i></a>
           </div>
 
-          <div className="rpm-apply-form">
+          <div className="rpm-apply-form" id="rpm-apply-form">
+            <span className="rpm-apply-form-tag">Free · Takes 2 minutes</span>
             <iframe className="rpm-apply-frame" src={FORM_URL} title="RPM Funding application form" />
             <p className="rpm-apply-fallback">Form not loading? <a className="rpm-apply-fallback-link" href={FORM_URL} target="_blank" rel="noreferrer">Open it in a new tab</a></p>
           </div>
@@ -36,11 +35,9 @@ function Apply() {
 }
 
 const STEPS = [
-  { title: 'Apply online', text: 'Complete the short form. No paperwork hassles.' },
-  { title: 'Quick review', text: 'Our team reviews your application and bank statements within hours.' },
-  { title: 'Get approved', text: 'Review your transparent funding terms.' },
-  { title: 'Receive funds', text: 'Funds go to your business account, in as little as 24 hours.' }
+  { title: 'Fill the short form', text: 'About 2 minutes. No paperwork.' },
+  { title: 'We review within hours', text: 'Your advisor checks your application and bank statements.' },
+  { title: 'Get funded', text: 'Funds reach your account in as little as 24 hours.' }
 ]
-const ASSURANCES = ['No hard credit pull required', 'No collateral needed', 'All credit types welcome']
 
 export default Apply
