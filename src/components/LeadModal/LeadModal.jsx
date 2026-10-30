@@ -39,8 +39,8 @@ function LeadModal({ isOpen, onClose }) {
         <aside className="rpm-modal-side">
           <span className="rpm-modal-glow" />
           <div className="rpm-modal-message">
-            <span className="rpm-modal-badge">Free application · About 2 minutes</span>
-            <h2 className="rpm-modal-title">Get your funding decision in <em>2 minutes</em></h2>
+            <span className="rpm-modal-badge">Free application · About 30 seconds</span>
+            <h2 className="rpm-modal-title">Apply in <em>30 seconds</em></h2>
             <ul className="rpm-modal-perks">
               {PERKS.map((item) => <li key={item} className="rpm-modal-perk">{item}</li>)}
             </ul>

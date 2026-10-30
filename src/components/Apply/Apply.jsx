@@ -26,7 +26,7 @@ function Apply() {
 
           <Reveal className="rpm-apply-form" delay={150}>
             <div id="rpm-apply-form" className="rpm-apply-form-anchor" />
-            <span className="rpm-apply-form-tag">Free · Takes 2 minutes</span>
+            <span className="rpm-apply-form-tag">Free · Takes 30 seconds</span>
             <iframe className="rpm-apply-frame" src={FORM_URL} title="RPM Funding application form" />
             <p className="rpm-apply-fallback">Form not loading? <a className="rpm-apply-fallback-link" href={FORM_URL} target="_blank" rel="noreferrer">Open it in a new tab</a></p>
           </Reveal>
@@ -37,7 +37,7 @@ function Apply() {
 }
 
 const STEPS = [
-  { title: 'Fill the short form', text: 'About 2 minutes. No paperwork.' },
+  { title: 'Fill the short form', text: 'About 30 seconds. No paperwork.' },
   { title: 'We review within hours', text: 'Your advisor checks your application and bank statements.' },
   { title: 'Get funded', text: 'Funds reach your account in as little as 24 hours.' }
 ]

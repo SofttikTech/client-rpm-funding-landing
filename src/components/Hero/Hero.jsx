@@ -50,7 +50,7 @@ function Hero({ onApply }) {
             <h1 className="rpm-hero-title">Fast working capital, <em>repaid from your daily sales</em></h1>
             <div className="rpm-hero-actions">
               <button type="button" className="rpm-btn rpm-btn-pulse" onClick={onApply}>See if I qualify <i className="rpm-hero-arrow">→</i></button>
-              <span className="rpm-hero-note">Takes about 2 minutes</span>
+              <span className="rpm-hero-note">Takes about 30 seconds</span>
             </div>
             <div className="rpm-hero-trust">
               <div className="rpm-hero-trust-top">

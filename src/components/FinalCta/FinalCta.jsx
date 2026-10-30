@@ -24,7 +24,7 @@ function FinalCta({ onApply }) {
 
         <Reveal className="rpm-final-banner">
           <h2 className="rpm-final-banner-title">Keep your doors open and your business growing.</h2>
-          <p className="rpm-final-banner-sub">Apply in 2 minutes. No obligation, no hard credit pull.</p>
+          <p className="rpm-final-banner-sub">Apply in 30 seconds. No obligation, no hard credit pull.</p>
           <button type="button" className="rpm-btn rpm-btn-pulse" onClick={onApply}>Get funded today →</button>
           <p className="rpm-final-banner-call">Prefer to talk? Call <a href={PHONE_HREF}>{PHONE_DISPLAY}</a></p>
         </Reveal>
