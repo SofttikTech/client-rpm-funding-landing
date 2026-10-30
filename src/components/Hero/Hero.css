@@ -44,10 +44,12 @@
 .rpm-hero-visual { position: relative; }
 .rpm-hero-carousel { will-change: transform; position: relative; margin-left: auto; width: min(100%, calc((100svh - 170px) / 1.12)); aspect-ratio: 1 / 1.12; }
 .rpm-hero-carousel::before { content: ''; position: absolute; inset: 8% 6% -4%; border-radius: 50%; background: radial-gradient(closest-side, rgba(16, 183, 127, 0.35), transparent 75%); filter: blur(30px); pointer-events: none; }
-.rpm-hero-card { position: absolute; top: 0; left: 14%; width: 72%; height: 100%; border-radius: 32px; overflow: hidden; background: var(--rpm-navy-light); transform-origin: center center; transition: transform 1s cubic-bezier(0.65, 0, 0.35, 1), filter 1s ease-in-out, box-shadow 1s ease-in-out, z-index 0s linear 0.5s; }
+.rpm-hero-card { position: absolute; top: 0; left: 14%; width: 72%; height: 100%; border-radius: 32px; overflow: hidden; background: var(--rpm-navy-light); transform-origin: center center; transition: transform 0.9s cubic-bezier(0.65, 0, 0.35, 1), filter 0.9s ease-in-out, box-shadow 0.9s ease-in-out, z-index 0s linear 0.45s; }
 .rpm-hero-card[data-pos='0'] { z-index: 3; transform: translateX(0) scale(1); filter: brightness(1); box-shadow: 0 0 0 1px rgba(217, 184, 114, 0.6), 0 0 0 9px rgba(255, 255, 255, 0.06), 0 0 0 10px rgba(217, 184, 114, 0.22), 0 36px 70px -24px rgba(0, 0, 0, 0.75), 0 0 80px -20px rgba(16, 183, 127, 0.35); }
 .rpm-hero-card[data-pos='1'] { z-index: 2; transform: translateX(25.4%) scale(0.88); filter: brightness(0.6); box-shadow: 0 20px 40px -20px rgba(0, 0, 0, 0.6); }
 .rpm-hero-card[data-pos='2'] { z-index: 1; transform: translateX(-25.4%) scale(0.88); filter: brightness(0.6); box-shadow: 0 20px 40px -20px rgba(0, 0, 0, 0.6); }
+.rpm-hero-card[data-wrap='true'] { animation: rpm-hero-wrap 1s ease-in-out; }
+@keyframes rpm-hero-wrap { 0% { opacity: 1; } 28% { opacity: 0; } 72% { opacity: 0; } 100% { opacity: 1; } }
 .rpm-hero-photo { width: 100%; height: 100%; object-fit: cover; display: block; }
 
 
@@ -60,6 +62,7 @@
   .rpm-hero-glow { animation: none; }
   .rpm-hero-scroll-line::after { animation: none; }
   .rpm-hero-card { transition: none; }
+  .rpm-hero-card[data-wrap='true'] { animation: none; }
 }
 
 @media (max-width: 960px) {

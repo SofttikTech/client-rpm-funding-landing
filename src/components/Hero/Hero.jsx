@@ -5,7 +5,8 @@ import { PHONE_DISPLAY, PHONE_HREF } from '../../config'
 import './Hero.css'
 
 function Hero({ onApply }) {
-  const [index, setIndex] = useState(0)
+  const [slide, setSlide] = useState({ index: 0, prev: 0 })
+  const { index, prev } = slide
   const curveRef = useRef(null)
   const frameRef = useRef(null)
   const glowRef = useRef(null)
@@ -13,7 +14,7 @@ function Hero({ onApply }) {
   useEffect(() => {
     // Reason: respect users who ask for reduced motion, keep the first photo static
     if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) return undefined
-    const timer = setInterval(() => setIndex((prev) => (prev + 1) % PHOTOS.length), ROTATE_MS)
+    const timer = setInterval(() => setSlide((cur) => ({ index: (cur.index + 1) % PHOTOS.length, prev: cur.index })), ROTATE_MS)
     return () => clearInterval(timer)
   }, [])
 
@@ -108,11 +109,17 @@ function Hero({ onApply }) {
 
           <div className="rpm-hero-visual">
             <div className="rpm-hero-carousel" ref={frameRef}>
-              {PHOTOS.map(({ src, alt, position }, i) => (
-                <div key={src} className="rpm-hero-card" data-pos={(i - index + PHOTOS.length) % PHOTOS.length}>
+              {PHOTOS.map(({ src, alt, position }, i) => {
+                const pos = (i - index + PHOTOS.length) % PHOTOS.length
+                const prevPos = (i - prev + PHOTOS.length) % PHOTOS.length
+                // Reason: the card that jumps from the left slot to the right slot fades through instead of sliding behind the front card
+                const isWrapping = pos === 1 && prevPos === 2
+                return (
+                <div key={src} className="rpm-hero-card" data-pos={pos} data-wrap={isWrapping ? 'true' : undefined}>
                   <img className="rpm-hero-photo" src={src} alt={alt} style={{ objectPosition: position }} />
                 </div>
-              ))}
+                )
+              })}
             </div>
           </div>
         </div>

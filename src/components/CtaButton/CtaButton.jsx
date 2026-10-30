@@ -2,7 +2,7 @@ import { useRef } from 'react'
 import { ArrowRight } from 'lucide-react'
 import './CtaButton.css'
 
-function CtaButton({ children, onClick, className = '' }) {
+function CtaButton({ children, onClick, className = '', variant = 'green' }) {
   const ref = useRef(null)
 
   const handleMove = (e) => {
@@ -25,7 +25,7 @@ function CtaButton({ children, onClick, className = '' }) {
   }
 
   return (
-    <button ref={ref} type="button" className={`rpm-cta-btn ${className}`} onClick={onClick} onPointerMove={handleMove} onPointerLeave={handleLeave}>
+    <button ref={ref} type="button" className={`rpm-cta-btn rpm-cta-btn-${variant} ${className}`} onClick={onClick} onPointerMove={handleMove} onPointerLeave={handleLeave}>
       <span className="rpm-cta-btn-gloss" aria-hidden="true" />
       <span className="rpm-cta-btn-label">{children}</span>
       <span className="rpm-cta-btn-arrow" aria-hidden="true">

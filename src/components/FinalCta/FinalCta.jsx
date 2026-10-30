@@ -9,10 +9,11 @@ function FinalCta({ onApply }) {
     <section className="rpm-final" id="rpm-cta">
       <div className="rpm-container">
         <Reveal className="rpm-final-cta">
+          <span className="rpm-final-cta-mark" aria-hidden="true">R</span>
           <h2 className="rpm-final-cta-title">Keep your doors open and your <em>business growing</em></h2>
           <p className="rpm-final-cta-sub">Apply in 30 seconds. No obligation, no hard credit pull.</p>
           <div className="rpm-final-cta-actions">
-            <CtaButton className="rpm-final-cta-main" onClick={onApply}>Get funded today</CtaButton>
+            <CtaButton variant="light" className="rpm-final-cta-main" onClick={onApply}>Get funded today</CtaButton>
             <a className="rpm-btn rpm-btn-ghost" href={WEBSITE_URL} target="_blank" rel="noreferrer">Visit our website <ExternalLink size={17} aria-hidden="true" /></a>
           </div>
           <a className="rpm-final-cta-call" href={PHONE_HREF}><Phone size={16} aria-hidden="true" /> Prefer to talk? Call <b>{PHONE_DISPLAY}</b></a>
