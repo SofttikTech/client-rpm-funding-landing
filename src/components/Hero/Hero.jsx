@@ -5,7 +5,7 @@ import './Hero.css'
 
 function Hero({ onApply }) {
   const [index, setIndex] = useState(0)
-  const heroRef = useRef(null)
+  const curveRef = useRef(null)
   const frameRef = useRef(null)
   const glowRef = useRef(null)
 
@@ -17,32 +17,57 @@ function Hero({ onApply }) {
   }, [])
 
   useEffect(() => {
-    const maxCurve = window.innerWidth <= 500 ? 40 : 110
+    const curve = curveRef.current
+    const frameEl = frameRef.current
+    const glowEl = glowRef.current
+    if (!curve) return undefined
+    const curveHeight = () => curve.getBoundingClientRect().height || 110
+    const setCurve = (progress) => { curve.style.transform = `translate3d(0, ${(1 - progress) * curveHeight()}px, 0)` }
     // Reason: reduced-motion visitors get a fixed gentle curve instead of the scroll animation
     if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
-      if (heroRef.current) heroRef.current.style.setProperty('--rpm-curve', `${maxCurve * 0.5}`)
+      setCurve(0.5)
       return undefined
     }
-    let frame = 0
-    // Reason: the bottom edge starts flat so the first screen is a clean block, then curves in as the page scrolls; the photo drifts up slower and the glow faster than the scroll
-    const onScroll = () => {
-      cancelAnimationFrame(frame)
-      frame = requestAnimationFrame(() => {
-        const y = Math.min(window.scrollY, 700)
-        const p = Math.min(window.scrollY / (window.innerHeight * 0.45), 1)
-        const eased = p * p * (3 - 2 * p)
-        if (heroRef.current) heroRef.current.style.setProperty('--rpm-curve', `${eased * maxCurve}`)
-        if (frameRef.current) frameRef.current.style.transform = `translateY(${y * -0.08}px)`
-        if (glowRef.current) glowRef.current.style.transform = `translateY(${y * 0.18}px)`
-      })
+    // Reason: only transforms change (GPU composited, no repaint) and values glide toward the scroll target, so wheel steps never look jerky
+    let progress = 0
+    let offset = 0
+    let targetProgress = 0
+    let targetOffset = 0
+    let raf = 0
+    const read = () => {
+      targetOffset = Math.min(window.scrollY, 700)
+      const p = Math.min(window.scrollY / (window.innerHeight * 0.45), 1)
+      targetProgress = p * p * (3 - 2 * p)
     }
-    onScroll()
+    const tick = () => {
+      progress += (targetProgress - progress) * 0.12
+      offset += (targetOffset - offset) * 0.12
+      if (Math.abs(targetProgress - progress) < 0.001) progress = targetProgress
+      if (Math.abs(targetOffset - offset) < 0.1) offset = targetOffset
+      setCurve(progress)
+      if (frameEl) frameEl.style.transform = `translate3d(0, ${offset * -0.08}px, 0)`
+      if (glowEl) glowEl.style.transform = `translate3d(0, ${offset * 0.18}px, 0)`
+      raf = progress === targetProgress && offset === targetOffset ? 0 : requestAnimationFrame(tick)
+    }
+    const onScroll = () => {
+      read()
+      if (!raf) raf = requestAnimationFrame(tick)
+    }
+    read()
+    progress = targetProgress
+    offset = targetOffset
+    tick()
     window.addEventListener('scroll', onScroll, { passive: true })
-    return () => { window.removeEventListener('scroll', onScroll); cancelAnimationFrame(frame) }
+    window.addEventListener('resize', onScroll)
+    return () => {
+      window.removeEventListener('scroll', onScroll)
+      window.removeEventListener('resize', onScroll)
+      cancelAnimationFrame(raf)
+    }
   }, [])
 
   return (
-    <section className="rpm-hero" ref={heroRef}>
+    <section className="rpm-hero">
       <span className="rpm-hero-glow-wrap" ref={glowRef}><span className="rpm-hero-glow rpm-hero-glow-a" /></span>
       <span className="rpm-hero-glow rpm-hero-glow-b" />
       <div className="rpm-container rpm-hero-inner">
@@ -101,6 +126,9 @@ function Hero({ onApply }) {
         </div>
       </div>
 
+      <svg className="rpm-hero-curve" ref={curveRef} viewBox="0 0 1440 110" preserveAspectRatio="none" aria-hidden="true">
+        <path d="M0,0 Q720,200 1440,0 L1440,110 L0,110 Z" />
+      </svg>
     </section>
   )
 }

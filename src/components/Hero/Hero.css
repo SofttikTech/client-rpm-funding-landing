@@ -1,10 +1,11 @@
-.rpm-hero { position: relative; overflow: hidden; display: flex; flex-direction: column; min-height: 100vh; min-height: 100svh; color: #fff; padding-bottom: 72px; --rpm-curve: 0; border-radius: 0 0 50% 50% / 0 0 calc(var(--rpm-curve) * 1px) calc(var(--rpm-curve) * 1px); background: linear-gradient(165deg, var(--rpm-navy-dark) 0%, var(--rpm-navy) 55%, var(--rpm-navy-light) 100%); }
+.rpm-hero { position: relative; overflow: hidden; display: flex; flex-direction: column; min-height: 100vh; min-height: 100svh; color: #fff; padding-bottom: 72px; background: linear-gradient(165deg, var(--rpm-navy-dark) 0%, var(--rpm-navy) 55%, var(--rpm-navy-light) 100%); }
 .rpm-hero::before { content: ''; position: absolute; inset: 0; background-image: radial-gradient(rgba(255, 255, 255, 0.09) 1px, transparent 1.5px); background-size: 28px 28px; -webkit-mask-image: radial-gradient(ellipse 70% 80% at 80% 30%, #000, transparent 75%); mask-image: radial-gradient(ellipse 70% 80% at 80% 30%, #000, transparent 75%); pointer-events: none; }
-.rpm-hero-glow { position: absolute; border-radius: 50%; filter: blur(90px); pointer-events: none; }
+.rpm-hero-glow { will-change: transform; position: absolute; border-radius: 50%; filter: blur(90px); pointer-events: none; }
 .rpm-hero-glow-a { width: 560px; height: 560px; right: 4%; top: -120px; background: rgba(16, 183, 127, 0.38); animation: rpm-hero-drift-a 14s ease-in-out infinite alternate; }
 .rpm-hero-glow-b { width: 520px; height: 520px; left: -140px; bottom: -200px; background: rgba(90, 110, 235, 0.38); animation: rpm-hero-drift-b 18s ease-in-out infinite alternate; }
 .rpm-hero-inner { position: relative; z-index: 1; flex: 1; display: flex; flex-direction: column; width: 100%; }
 .rpm-hero-grid { margin: auto 0; }
+.rpm-hero-curve { position: absolute; left: 0; right: 0; bottom: -1px; width: 100%; height: 110px; display: block; fill: var(--rpm-bg); transform: translate3d(0, 110px, 0); will-change: transform; pointer-events: none; z-index: 2; }
 .rpm-hero-glow-wrap { position: absolute; inset: 0; pointer-events: none; will-change: transform; }
 
 .rpm-hero-top { display: flex; justify-content: space-between; align-items: center; padding: 24px 0 clamp(16px, 4vh, 44px); }
