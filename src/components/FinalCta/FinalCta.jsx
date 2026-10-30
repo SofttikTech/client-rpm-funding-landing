@@ -1,46 +1,24 @@
-import { useState } from 'react'
-import { PHONE_DISPLAY, PHONE_HREF } from '../../config'
+import { PHONE_DISPLAY, PHONE_HREF, WEBSITE_URL } from '../../config'
 import Reveal from '../Reveal/Reveal'
 import './FinalCta.css'
 
 function FinalCta({ onApply }) {
-  const [openIndex, setOpenIndex] = useState(0)
-
   return (
-    <section className="rpm-final">
+    <section className="rpm-final" id="rpm-cta">
       <div className="rpm-container">
-        <Reveal className="rpm-final-industries">
-          <h2 className="rpm-final-industries-title">Built for businesses that get paid every day</h2>
-          <p className="rpm-final-industries-sub">Repayment is a small share of your daily sales, so it flexes with slow and busy weeks.</p>
-          <div className="rpm-final-industries-grid">
-            {INDUSTRIES.map(({ title, text }) => (
-              <div key={title} className="rpm-final-industry">
-                <h3 className="rpm-final-industry-title">{title}</h3>
-                <p className="rpm-final-industry-text">{text}</p>
-              </div>
-            ))}
+        <Reveal className="rpm-final-cta">
+          <span className="rpm-final-cta-glow" />
+          <h2 className="rpm-final-cta-title">Keep your doors open and your <em>business growing</em></h2>
+          <p className="rpm-final-cta-sub">Apply in 30 seconds. No obligation, no hard credit pull.</p>
+          <ul className="rpm-final-cta-perks">
+            {PERKS.map((item) => <li key={item} className="rpm-final-cta-perk">{item}</li>)}
+          </ul>
+          <div className="rpm-final-cta-actions">
+            <button type="button" className="rpm-btn rpm-btn-pulse" onClick={onApply}>Get funded today →</button>
+            <a className="rpm-btn rpm-btn-ghost" href={WEBSITE_URL} target="_blank" rel="noreferrer">Visit our website ↗</a>
           </div>
+          <p className="rpm-final-cta-call">Prefer to talk? Call <a href={PHONE_HREF}>{PHONE_DISPLAY}</a></p>
         </Reveal>
-
-        <Reveal className="rpm-final-banner">
-          <h2 className="rpm-final-banner-title">Keep your doors open and your business growing.</h2>
-          <p className="rpm-final-banner-sub">Apply in 30 seconds. No obligation, no hard credit pull.</p>
-          <button type="button" className="rpm-btn rpm-btn-pulse" onClick={onApply}>Get funded today →</button>
-          <p className="rpm-final-banner-call">Prefer to talk? Call <a href={PHONE_HREF}>{PHONE_DISPLAY}</a></p>
-        </Reveal>
-
-        <div className="rpm-final-faq">
-          <h2 className="rpm-final-faq-title">Quick answers</h2>
-          {FAQS.map(({ question, answer }, index) => (
-            <div key={question} className={`rpm-final-faq-item${openIndex === index ? ' open' : ''}`}>
-              <button type="button" className="rpm-final-faq-question" onClick={() => setOpenIndex(openIndex === index ? -1 : index)}>
-                {question}
-                <i className="rpm-final-faq-icon">{openIndex === index ? '−' : '+'}</i>
-              </button>
-              {openIndex === index && <p className="rpm-final-faq-answer">{answer}</p>}
-            </div>
-          ))}
-        </div>
 
         <footer className="rpm-final-footer">
           <p className="rpm-final-footer-text">RPM Funding Group is a commercial financing company that may act as a broker, referral source, or intermediary connecting businesses with third-party financing providers. It is not a bank or depository financial institution. Applying does not guarantee approval, a particular funding amount, pricing, or same-day or next-day funding. Products are for business purposes only. Merchant cash advances involve the purchase of future business receivables and are not loans.</p>
@@ -51,18 +29,5 @@ function FinalCta({ onApply }) {
   )
 }
 
-const INDUSTRIES = [
-  { title: 'Restaurants and food service', text: 'Restock inventory, cover payroll, fix equipment or open a second location.' },
-  { title: 'Salons, parlors and beauty', text: 'Upgrade chairs and products, hire stylists or expand your space.' },
-  { title: 'Med spas and healthcare', text: 'Buy new equipment, grow your treatment menu and fund marketing.' },
-  { title: 'Construction and contractors', text: 'Cover materials and crew costs while you wait on client payments.' }
-]
-
-const FAQS = [
-  { question: 'What is a merchant cash advance?', answer: 'It is working capital based on your business revenue. Repayment is a fixed percentage of your daily sales, so payments move with your business.' },
-  { question: 'How quickly can I receive funding?', answer: 'Many businesses are funded in as little as 24 hours after approval. Timing depends on your application and is not guaranteed.' },
-  { question: 'What do I need to qualify?', answer: 'A business with consistent revenue and recent bank statements. We look at how your business performs, not just your credit.' },
-  { question: 'Can I use the funds for anything?', answer: 'Yes. Most owners use funds for inventory, payroll, marketing, expansion or unexpected expenses.' }
-]
-
+const PERKS = ['Funds in as little as 24 hours', 'No collateral', 'All credit types welcome']
 export default FinalCta

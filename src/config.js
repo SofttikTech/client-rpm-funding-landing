@@ -2,3 +2,4 @@
 export const FORM_URL = 'https://app.sellagent.ai/f/fa9674dbd3406c74';
 export const PHONE_DISPLAY = '(786) 778-0347';
 export const PHONE_HREF = 'tel:+17867780347';
+export const WEBSITE_URL = 'https://rpmfundingco.com/';
