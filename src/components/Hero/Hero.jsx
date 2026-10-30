@@ -125,6 +125,28 @@ function Hero({ onApply }) {
         </div>
       </div>
 
+      <svg className="rpm-hero-chart" viewBox="0 0 960 320" preserveAspectRatio="none" aria-hidden="true">
+        <defs>
+          <linearGradient id="rpm-chart-bar" x1="0" y1="0" x2="0" y2="1">
+            <stop offset="0" stopColor="#d9b872" stopOpacity="0.6" />
+            <stop offset="1" stopColor="#d9b872" stopOpacity="0" />
+          </linearGradient>
+          <linearGradient id="rpm-chart-line" x1="0" x2="1" y1="0" y2="0">
+            <stop offset="0" stopColor="#d9b872" stopOpacity="0" />
+            <stop offset="0.4" stopColor="#d9b872" />
+            <stop offset="1" stopColor="#6ee7b7" />
+          </linearGradient>
+          <linearGradient id="rpm-chart-area" x1="0" y1="0" x2="0" y2="1">
+            <stop offset="0" stopColor="#6ee7b7" stopOpacity="0.28" />
+            <stop offset="1" stopColor="#6ee7b7" stopOpacity="0" />
+          </linearGradient>
+        </defs>
+        {[80, 160, 240].map((y) => <line key={y} className="rpm-hero-chart-grid" x1="0" x2="960" y1={y} y2={y} />)}
+        {CHART_BARS.map((h, i) => <rect key={i} className="rpm-hero-chart-bar" style={{ animationDelay: `${0.15 + i * 0.09}s` }} x={36 + i * 76} y={310 - h} width="38" height={h} rx="4" fill="url(#rpm-chart-bar)" />)}
+        <path className="rpm-hero-chart-area" d={`${CHART_LINE} L945 320 L20 320 Z`} fill="url(#rpm-chart-area)" />
+        <path className="rpm-hero-chart-line" d={CHART_LINE} pathLength="1" fill="none" stroke="url(#rpm-chart-line)" strokeWidth="2.4" strokeLinecap="round" vectorEffect="non-scaling-stroke" />
+      </svg>
+
       <a className="rpm-hero-scroll" href="#rpm-apply" aria-label="Scroll to the application"><span className="rpm-hero-scroll-text">Scroll</span><span className="rpm-hero-scroll-line" /></a>
 
       <svg className="rpm-hero-curve" ref={curveRef} viewBox="0 0 1440 110" preserveAspectRatio="none" aria-hidden="true">
@@ -134,6 +156,8 @@ function Hero({ onApply }) {
   )
 }
 
+const CHART_BARS = [44, 68, 60, 98, 90, 136, 126, 170, 158, 214, 198, 262]
+const CHART_LINE = 'M20 285 C150 272 190 242 290 226 S430 214 520 168 S690 128 780 78 S900 28 945 12'
 const ROTATE_MS = 4500
 const STATS = [
   { value: '$500MM+', label: 'funded to date' },
