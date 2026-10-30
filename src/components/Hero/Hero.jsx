@@ -106,10 +106,16 @@ function Hero({ onApply }) {
           </div>
 
           <div className="rpm-hero-visual">
-            <div className="rpm-hero-frame" ref={frameRef}>
-              {PHOTOS.map(({ src, alt, position }, i) => (
-                <img key={src} className={`rpm-hero-photo${i === index ? ' active' : ''}`} src={src} alt={alt} style={{ objectPosition: position }} />
-              ))}
+            <div className="rpm-hero-carousel" ref={frameRef}>
+              <div className="rpm-hero-viewport">
+                <div className="rpm-hero-track" style={{ transform: `translate3d(calc(-1 * min(${index} * (${SLIDE_WIDTH}% + ${SLIDE_GAP}px), ${(PHOTOS.length * SLIDE_WIDTH) - 100}% + ${(PHOTOS.length - 1) * SLIDE_GAP}px)), 0, 0)` }}>
+                  {PHOTOS.map(({ src, alt, position }, i) => (
+                    <div key={src} className={`rpm-hero-slide${i === index ? ' active' : ''}`}>
+                      <img className="rpm-hero-photo" src={src} alt={alt} style={{ objectPosition: position }} />
+                    </div>
+                  ))}
+                </div>
+              </div>
               <div className="rpm-hero-dots">
                 {PHOTOS.map(({ tag }, i) => (
                   <button key={tag} type="button" aria-label={`Show ${tag}`} className={`rpm-hero-dot${i === index ? ' active' : ''}`} onClick={() => setIndex(i)} />
@@ -134,6 +140,8 @@ const STATS = [
   { value: '24hrs', label: 'average funding time' }
 ]
 // Reason: one icon per industry RPM serves, in place of customer faces we do not have permission to show
+const SLIDE_WIDTH = 82
+const SLIDE_GAP = 16
 const PHOTOS = [
   { src: '/hero-owner.jpg', alt: 'Smiling restaurant owner checking sales on his phone', tag: 'Restaurants', position: '40% 50%' },
   { src: '/hero-salon.jpg', alt: 'Smiling salon owner standing in her salon', tag: 'Salons and parlors', position: '45% 50%' },
