@@ -21,9 +21,9 @@
 .rpm-modal-proof { display: flex; align-items: center; gap: 18px; padding-top: 22px; border-top: 1px solid rgba(255, 255, 255, 0.14); }
 .rpm-modal-photo { width: 84px; height: 84px; object-fit: cover; object-position: 40% 20%; border-radius: 50%; border: 3px solid var(--rpm-emerald); box-shadow: 0 0 0 6px rgba(16, 183, 127, 0.18); flex: none; }
 .rpm-modal-proof-copy { display: flex; flex-direction: column; }
-.rpm-modal-eyebrow { font-size: 11px; font-weight: 600; letter-spacing: 1.6px; text-transform: uppercase; color: rgba(255, 255, 255, 0.7); }
-.rpm-modal-amount { font-family: var(--rpm-font-head); font-size: 56px; line-height: 1; font-weight: 800; background: linear-gradient(180deg, #fff, #b7f1da); -webkit-background-clip: text; background-clip: text; color: transparent; }
-.rpm-modal-fact { position: relative; font-size: 14px; color: rgba(255, 255, 255, 0.75); }
+.rpm-modal-eyebrow { font-size: 11px; font-weight: 600; letter-spacing: 1.6px; text-transform: uppercase; color: rgba(255, 255, 255, 0.85); }
+.rpm-modal-amount { font-family: var(--rpm-font-body); letter-spacing: -1px; font-size: 56px; line-height: 1; font-weight: 800; background: linear-gradient(180deg, #fff, #b7f1da); -webkit-background-clip: text; background-clip: text; color: transparent; }
+.rpm-modal-fact { position: relative; font-size: 14px; color: rgba(255, 255, 255, 0.85); }
 
 @keyframes rpm-modal-fade { from { opacity: 0; } to { opacity: 1; } }
 @keyframes rpm-modal-pop { from { opacity: 0; transform: translateY(24px) scale(0.96); } to { opacity: 1; transform: translateY(0) scale(1); } }

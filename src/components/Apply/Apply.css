@@ -1,4 +1,4 @@
-.rpm-apply { position: relative; padding: 72px 0 104px; background: radial-gradient(ellipse 50% 60% at 78% 45%, rgba(16, 183, 127, 0.14), transparent 70%), var(--rpm-bg); }
+.rpm-apply { position: relative; padding: 40px 0 104px; background: radial-gradient(ellipse 50% 60% at 78% 45%, rgba(16, 183, 127, 0.14), transparent 70%), var(--rpm-bg); }
 .rpm-apply-grid { display: grid; grid-template-columns: 0.85fr 1.15fr; gap: 72px; align-items: center; }
 
 .rpm-apply-eyebrow { display: inline-block; font-size: 14px; font-weight: 700; letter-spacing: 1.2px; text-transform: uppercase; color: var(--rpm-emerald-dark); margin-bottom: 12px; }

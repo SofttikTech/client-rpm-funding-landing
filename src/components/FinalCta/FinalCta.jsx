@@ -1,5 +1,6 @@
 import { useState } from 'react'
 import { PHONE_DISPLAY, PHONE_HREF } from '../../config'
+import Reveal from '../Reveal/Reveal'
 import './FinalCta.css'
 
 function FinalCta({ onApply }) {
@@ -8,7 +9,7 @@ function FinalCta({ onApply }) {
   return (
     <section className="rpm-final">
       <div className="rpm-container">
-        <div className="rpm-final-industries">
+        <Reveal className="rpm-final-industries">
           <h2 className="rpm-final-industries-title">Built for businesses that get paid every day</h2>
           <p className="rpm-final-industries-sub">Repayment is a small share of your daily sales, so it flexes with slow and busy weeks.</p>
           <div className="rpm-final-industries-grid">
@@ -19,14 +20,14 @@ function FinalCta({ onApply }) {
               </div>
             ))}
           </div>
-        </div>
+        </Reveal>
 
-        <div className="rpm-final-banner">
+        <Reveal className="rpm-final-banner">
           <h2 className="rpm-final-banner-title">Keep your doors open and your business growing.</h2>
           <p className="rpm-final-banner-sub">Apply in 2 minutes. No obligation, no hard credit pull.</p>
           <button type="button" className="rpm-btn rpm-btn-pulse" onClick={onApply}>Get funded today →</button>
           <p className="rpm-final-banner-call">Prefer to talk? Call <a href={PHONE_HREF}>{PHONE_DISPLAY}</a></p>
-        </div>
+        </Reveal>
 
         <div className="rpm-final-faq">
           <h2 className="rpm-final-faq-title">Quick answers</h2>

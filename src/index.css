@@ -14,7 +14,7 @@
 
 * { box-sizing: border-box; margin: 0; padding: 0; }
 html { scroll-behavior: smooth; }
-body { font-family: var(--rpm-font-body); color: var(--rpm-text); background: var(--rpm-bg); line-height: 1.6; -webkit-font-smoothing: antialiased; }
+body { font-family: var(--rpm-font-body); color: var(--rpm-text); background: var(--rpm-bg); line-height: 1.6; -webkit-font-smoothing: antialiased; font-variant-numeric: lining-nums; font-feature-settings: 'lnum' 1; }
 a { color: inherit; text-decoration: none; }
 button { font-family: inherit; cursor: pointer; }
 

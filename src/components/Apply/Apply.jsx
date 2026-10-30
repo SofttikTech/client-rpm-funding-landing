@@ -1,4 +1,5 @@
 import { FORM_URL } from '../../config'
+import Reveal from '../Reveal/Reveal'
 import './Apply.css'
 
 function Apply() {
@@ -6,7 +7,7 @@ function Apply() {
     <section className="rpm-apply" id="rpm-apply">
       <div className="rpm-container">
         <div className="rpm-apply-grid">
-          <div className="rpm-apply-info">
+          <Reveal className="rpm-apply-info">
             <span className="rpm-apply-eyebrow">How it works</span>
             <h2 className="rpm-apply-title">Your funding decision in 3 simple steps</h2>
             <ol className="rpm-apply-steps">
@@ -21,13 +22,14 @@ function Apply() {
               ))}
             </ol>
             <a className="rpm-apply-arrow" href="#rpm-apply-form">Start with the form <i className="rpm-apply-arrow-icon">→</i></a>
-          </div>
+          </Reveal>
 
-          <div className="rpm-apply-form" id="rpm-apply-form">
+          <Reveal className="rpm-apply-form" delay={150}>
+            <div id="rpm-apply-form" className="rpm-apply-form-anchor" />
             <span className="rpm-apply-form-tag">Free · Takes 2 minutes</span>
             <iframe className="rpm-apply-frame" src={FORM_URL} title="RPM Funding application form" />
             <p className="rpm-apply-fallback">Form not loading? <a className="rpm-apply-fallback-link" href={FORM_URL} target="_blank" rel="noreferrer">Open it in a new tab</a></p>
-          </div>
+          </Reveal>
         </div>
       </div>
     </section>
