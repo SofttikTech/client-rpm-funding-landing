@@ -43,8 +43,11 @@ function LeadModal({ isOpen, onClose }) {
             {PERKS.map((item) => <li key={item} className="rpm-modal-perk">{item}</li>)}
           </ul>
           <div className="rpm-modal-proof">
-            <p className="rpm-modal-amount">Up to <b>$5M</b> in working capital</p>
-            <p className="rpm-modal-fact">Trusted by 5,000+ businesses · $500MM+ funded</p>
+            <img className="rpm-modal-photo" src="/hero-owner.jpg" alt="" />
+            <div className="rpm-modal-proof-copy">
+              <p className="rpm-modal-amount">Up to <b>$5M</b> in working capital</p>
+              <p className="rpm-modal-fact">5,000+ businesses · $500MM+ funded</p>
+            </div>
           </div>
         </aside>
       </div>

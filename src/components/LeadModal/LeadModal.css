@@ -18,7 +18,9 @@
 .rpm-modal-perks { list-style: none; display: flex; flex-direction: column; gap: 12px; }
 .rpm-modal-perk { position: relative; padding-left: 28px; font-size: 15px; line-height: 1.4; font-weight: 500; color: rgba(255, 255, 255, 0.92); }
 .rpm-modal-perk::before { content: '✓'; position: absolute; left: 0; top: 0; width: 19px; height: 19px; border-radius: 50%; background: rgba(16, 183, 127, 0.9); color: #04122b; font-size: 11px; font-weight: 800; display: flex; align-items: center; justify-content: center; }
-.rpm-modal-proof { padding-top: 22px; border-top: 1px solid rgba(255, 255, 255, 0.14); }
+.rpm-modal-proof { display: flex; align-items: center; gap: 16px; padding-top: 22px; border-top: 1px solid rgba(255, 255, 255, 0.14); }
+.rpm-modal-photo { flex: none; width: 64px; height: 64px; object-fit: cover; object-position: 40% 20%; border-radius: 50%; border: 2px solid rgba(110, 231, 183, 0.8); }
+.rpm-modal-proof-copy { min-width: 0; }
 .rpm-modal-amount { font-size: 17px; color: rgba(255, 255, 255, 0.9); margin-bottom: 6px; }
 .rpm-modal-amount b { font-size: 26px; font-weight: 700; color: #6ee7b7; }
 .rpm-modal-fact { font-size: 13px; color: rgba(255, 255, 255, 0.7); }
