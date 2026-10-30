@@ -1,4 +1,4 @@
-import { ArrowRight, ExternalLink, FileText, Clock, Banknote, Phone } from 'lucide-react'
+import { ArrowRight, ExternalLink, Phone } from 'lucide-react'
 import { PHONE_DISPLAY, PHONE_HREF, WEBSITE_URL, DISCLAIMER_URL } from '../../config'
 import Reveal from '../Reveal/Reveal'
 import './FinalCta.css'
@@ -8,31 +8,13 @@ function FinalCta({ onApply }) {
     <section className="rpm-final" id="rpm-cta">
       <div className="rpm-container">
         <Reveal className="rpm-final-cta">
-          <span className="rpm-final-cta-glow" />
-          <div className="rpm-final-cta-copy">
-            <h2 className="rpm-final-cta-title">Keep your doors open and your <em>business growing</em></h2>
-            <p className="rpm-final-cta-sub">Apply in 30 seconds. No obligation, no hard credit pull.</p>
-            <div className="rpm-final-cta-actions">
-              <button type="button" className="rpm-btn rpm-btn-pulse rpm-final-cta-main" onClick={onApply}>Get funded today <ArrowRight size={20} aria-hidden="true" /></button>
-              <a className="rpm-btn rpm-btn-ghost" href={WEBSITE_URL} target="_blank" rel="noreferrer">Visit our website <ExternalLink size={17} aria-hidden="true" /></a>
-            </div>
-            <a className="rpm-final-cta-call" href={PHONE_HREF}><Phone size={16} aria-hidden="true" /> Prefer to talk? Call <b>{PHONE_DISPLAY}</b></a>
+          <h2 className="rpm-final-cta-title">Keep your doors open and your <em>business growing</em></h2>
+          <p className="rpm-final-cta-sub">Apply in 30 seconds. No obligation, no hard credit pull.</p>
+          <div className="rpm-final-cta-actions">
+            <button type="button" className="rpm-btn rpm-btn-pulse rpm-final-cta-main" onClick={onApply}>Get funded today <ArrowRight size={20} aria-hidden="true" /></button>
+            <a className="rpm-btn rpm-btn-ghost" href={WEBSITE_URL} target="_blank" rel="noreferrer">Visit our website <ExternalLink size={17} aria-hidden="true" /></a>
           </div>
-
-          <div className="rpm-final-cta-panel">
-            <h3 className="rpm-final-cta-panel-title">What happens next</h3>
-            <ol className="rpm-final-cta-steps">
-              {STEPS.map(({ Icon, title, text }) => (
-                <li key={title} className="rpm-final-cta-step">
-                  <span className="rpm-final-cta-step-icon"><Icon size={22} strokeWidth={1.75} aria-hidden="true" /></span>
-                  <span className="rpm-final-cta-step-copy">
-                    <strong className="rpm-final-cta-step-title">{title}</strong>
-                    <span className="rpm-final-cta-step-text">{text}</span>
-                  </span>
-                </li>
-              ))}
-            </ol>
-          </div>
+          <a className="rpm-final-cta-call" href={PHONE_HREF}><Phone size={16} aria-hidden="true" /> Prefer to talk? Call <b>{PHONE_DISPLAY}</b></a>
         </Reveal>
 
         <footer className="rpm-final-footer">
@@ -42,11 +24,5 @@ function FinalCta({ onApply }) {
     </section>
   )
 }
-
-const STEPS = [
-  { Icon: FileText, title: 'Apply in 30 seconds', text: 'Short form, no paperwork.' },
-  { Icon: Clock, title: 'We review within hours', text: 'Your advisor checks your application and bank statements.' },
-  { Icon: Banknote, title: 'Get funded', text: 'Funds reach your account in as little as 24 hours.' }
-]
 
 export default FinalCta

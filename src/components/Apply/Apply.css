@@ -1,4 +1,7 @@
-.rpm-apply { position: relative; padding: 40px 0 104px; background: radial-gradient(ellipse 50% 60% at 78% 45%, rgba(16, 183, 127, 0.14), transparent 70%), var(--rpm-bg); }
+@property --rpm-angle { syntax: '<angle>'; initial-value: 0deg; inherits: false; }
+
+.rpm-apply { position: relative; min-height: 100vh; min-height: 100svh; display: flex; align-items: center; padding: 48px 0; background: radial-gradient(ellipse 50% 60% at 78% 45%, rgba(16, 183, 127, 0.14), transparent 70%), var(--rpm-bg); }
+.rpm-apply > .rpm-container { width: 100%; }
 .rpm-apply-grid { display: grid; grid-template-columns: 0.85fr 1.15fr; gap: 72px; align-items: center; }
 
 .rpm-apply-title { font-family: var(--rpm-font-head); font-size: 42px; line-height: 1.15; color: var(--rpm-text-dark); margin-bottom: 40px; }
@@ -12,12 +15,19 @@
 .rpm-apply-arrow:hover .rpm-apply-arrow-icon { transform: translateX(6px); }
 
 .rpm-apply-form-col { width: 100%; max-width: 700px; justify-self: end; }
-.rpm-apply-form { padding: 2px; border-radius: 28px; background: linear-gradient(135deg, var(--rpm-emerald), #6ee7b7 45%, var(--rpm-navy-light)); box-shadow: 0 30px 70px rgba(15, 31, 61, 0.2), 0 0 70px rgba(16, 183, 127, 0.22); }
+.rpm-apply-form-col > div { margin-left: auto; }
+.rpm-apply-form { padding: 2px; border-radius: 28px; background: conic-gradient(from var(--rpm-angle), var(--rpm-emerald), #6ee7b7, var(--rpm-navy-light), #5a6eeb, var(--rpm-emerald)); animation: rpm-apply-spin 6s linear infinite; box-shadow: 0 30px 70px rgba(15, 31, 61, 0.2), 0 0 70px rgba(16, 183, 127, 0.22); }
 .rpm-apply-form-inner { position: relative; height: 730px; border-radius: 26px; overflow: hidden; background: #eff4f9; }
 /* Reason: the form page paints its own grey backdrop, so the iframe is cropped 16px on each side to leave a tight, even rim around the white card */
 .rpm-apply-frame { position: absolute; top: -16px; left: -16px; width: calc(100% + 32px); height: 770px; border: none; }
 .rpm-apply-fallback { text-align: center; font-size: 13px; margin-top: 16px; color: #6b7280; }
 .rpm-apply-fallback-link { color: var(--rpm-emerald-dark); font-weight: 600; text-decoration: underline; }
+
+@keyframes rpm-apply-spin { to { --rpm-angle: 360deg; } }
+
+@media (prefers-reduced-motion: reduce) {
+  .rpm-apply-form { animation: none; }
+}
 
 @media (max-width: 960px) {
   .rpm-apply-grid { grid-template-columns: minmax(0, 1fr); gap: 48px; }
@@ -26,7 +36,8 @@
   .rpm-apply-arrow { display: none; }
 }
 @media (max-width: 500px) {
-  .rpm-apply { padding-bottom: 72px; }
+  .rpm-apply { padding: 32px 0; }
+.rpm-apply > .rpm-container { width: 100%; }
   .rpm-apply-title { font-size: 28px; }
   .rpm-apply-step-title { font-size: 19px; }
   .rpm-apply-step-text { font-size: 16px; }
