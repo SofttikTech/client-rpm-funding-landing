@@ -92,8 +92,15 @@ function Hero({ onApply }) {
       </div>
 
       <svg className="rpm-hero-divider" viewBox="0 0 1440 120" preserveAspectRatio="none" aria-hidden="true">
-        <path className="rpm-hero-divider-back" d="M0,58 C260,112 520,18 800,52 C1060,84 1260,104 1440,38 L1440,120 L0,120 Z" />
-        <path className="rpm-hero-divider-front" d="M0,92 C300,42 640,112 920,82 C1140,58 1300,62 1440,88 L1440,120 L0,120 Z" />
+        <defs>
+          <linearGradient id="rpm-hero-band" x1="0" x2="1" y1="0" y2="0">
+            <stop offset="0" stopColor="#5a6eeb" stopOpacity="0.22" />
+            <stop offset="0.5" stopColor="#10b77f" stopOpacity="0.28" />
+            <stop offset="1" stopColor="#5a6eeb" stopOpacity="0.22" />
+          </linearGradient>
+        </defs>
+        <path className="rpm-hero-divider-back" d="M0,14 Q720,112 1440,14 L1440,120 L0,120 Z" />
+        <path className="rpm-hero-divider-front" d="M0,38 Q720,116 1440,38 L1440,120 L0,120 Z" />
       </svg>
     </section>
   )
