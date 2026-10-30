@@ -73,7 +73,7 @@ function Hero({ onApply }) {
       <span className="rpm-hero-glow rpm-hero-glow-b" />
       <div className="rpm-container rpm-hero-inner">
         <header className="rpm-hero-top">
-          <span className="rpm-hero-logo">RPM<b>Funding</b> Group</span>
+          <span className="rpm-hero-logo"><i className="rpm-hero-logo-mark">R</i><span>RPM<b>Funding</b> Group</span></span>
           <a className="rpm-hero-phone" href={PHONE_HREF}>
             <Phone size={16} strokeWidth={1.9} aria-hidden="true" />
             {PHONE_DISPLAY}
@@ -117,6 +117,8 @@ function Hero({ onApply }) {
           </div>
         </div>
       </div>
+
+      <a className="rpm-hero-scroll" href="#rpm-apply" aria-label="Scroll to the application"><span className="rpm-hero-scroll-text">Scroll</span><span className="rpm-hero-scroll-line" /></a>
 
       <svg className="rpm-hero-curve" ref={curveRef} viewBox="0 0 1440 110" preserveAspectRatio="none" aria-hidden="true">
         <path d="M0,0 Q720,200 1440,0 L1440,110 L0,110 Z" />
