@@ -23,9 +23,12 @@ function Apply() {
             <a className="rpm-apply-arrow" href="#rpm-apply-form">Start with the form <i className="rpm-apply-arrow-icon">→</i></a>
           </Reveal>
 
-          <Reveal className="rpm-apply-form" delay={150}>
-            <div id="rpm-apply-form" className="rpm-apply-form-anchor" />
-            <iframe className="rpm-apply-frame" src={FORM_URL} title="RPM Funding application form" />
+          <Reveal className="rpm-apply-form-col" delay={150}>
+            <div className="rpm-apply-form" id="rpm-apply-form">
+              <div className="rpm-apply-form-inner">
+                <iframe className="rpm-apply-frame" src={FORM_URL} title="RPM Funding application form" />
+              </div>
+            </div>
             <p className="rpm-apply-fallback">Form not loading? <a className="rpm-apply-fallback-link" href={FORM_URL} target="_blank" rel="noreferrer">Open it in a new tab</a></p>
           </Reveal>
         </div>
