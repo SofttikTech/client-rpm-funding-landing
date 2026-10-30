@@ -9,7 +9,7 @@ function FinalCta() {
     <section className="rpm-final">
       <div className="rpm-container">
         <div className="rpm-final-banner">
-          <h2 className="rpm-final-banner-title">Ready to grow? Your funding decision is minutes away.</h2>
+          <h2 className="rpm-final-banner-title">Keep your doors open and your business growing.</h2>
           <p className="rpm-final-banner-sub">Apply in 2 minutes. No obligation, no hard credit pull.</p>
           <a className="rpm-btn" href={FORM_URL}>Get funded today →</a>
           <p className="rpm-final-banner-call">Prefer to talk? Call <a href={PHONE_HREF}>{PHONE_DISPLAY}</a></p>

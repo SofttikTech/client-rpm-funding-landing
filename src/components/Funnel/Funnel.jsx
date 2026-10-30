@@ -21,9 +21,10 @@ function Funnel() {
         </ol>
 
         <div className="rpm-funnel-benefits">
-          <h2 className="rpm-funnel-benefits-title">Built for business owners like you</h2>
+          <h2 className="rpm-funnel-benefits-title">Built for businesses that get paid every day</h2>
+          <p className="rpm-funnel-benefits-sub">Repayment is a small share of your daily sales, so it flexes with slow and busy weeks. No collateral, all credit types welcome.</p>
           <div className="rpm-funnel-benefit-grid">
-            {BENEFITS.map(({ title, text }) => (
+            {INDUSTRIES.map(({ title, text }) => (
               <div key={title} className="rpm-funnel-benefit">
                 <h3 className="rpm-funnel-benefit-title">{title}</h3>
                 <p className="rpm-funnel-benefit-text">{text}</p>
@@ -47,13 +48,11 @@ const STEPS = [
   { title: 'Receive funds', text: 'Funds go straight to your business account, in as little as 24 hours.' }
 ]
 
-const BENEFITS = [
-  { title: 'Fast approval', text: 'Decisions in as little as 1 hour with minimal documentation.' },
-  { title: 'No collateral needed', text: 'Funding is based on your revenue, not your assets.' },
-  { title: '$5K to $5M available', text: 'Right-sized capital for payroll, inventory, marketing or growth.' },
-  { title: 'Flexible repayment', text: 'Payment schedules that follow your business cycle.' },
-  { title: 'All credit welcome', text: 'We focus on how your business performs today.' },
-  { title: 'A dedicated advisor', text: 'A real person guides you through every step.' }
+const INDUSTRIES = [
+  { title: 'Restaurants and food service', text: 'Restock inventory, cover payroll, fix equipment or open a second location.' },
+  { title: 'Salons, parlors and beauty', text: 'Upgrade chairs and products, hire stylists or expand your space.' },
+  { title: 'Med spas and healthcare', text: 'Buy new equipment, grow your treatment menu and fund marketing.' },
+  { title: 'Construction and contractors', text: 'Cover materials and crew costs while you wait on client payments.' }
 ]
 
 export default Funnel

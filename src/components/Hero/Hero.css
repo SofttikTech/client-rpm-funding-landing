@@ -13,9 +13,12 @@
 
 .rpm-hero-card { background: #fff; color: var(--rpm-text); border-radius: 20px; padding: 36px 32px; box-shadow: 0 30px 80px rgba(0, 0, 0, 0.35); }
 .rpm-hero-card-step { font-size: 12px; font-weight: 700; letter-spacing: 0.6px; text-transform: uppercase; color: var(--rpm-emerald-dark); margin-bottom: 8px; }
-.rpm-hero-card-title { font-family: var(--rpm-font-head); font-size: 28px; line-height: 1.2; color: var(--rpm-text-dark); margin-bottom: 22px; }
+.rpm-hero-card-title { font-family: var(--rpm-font-head); font-size: 28px; line-height: 1.2; color: var(--rpm-text-dark); margin-bottom: 20px; }
+.rpm-hero-label { display: block; font-size: 13px; font-weight: 600; color: var(--rpm-text-dark); margin-bottom: 8px; }
+.rpm-hero-select { width: 100%; font-family: inherit; font-size: 15px; font-weight: 500; color: var(--rpm-text-dark); background: var(--rpm-bg); border: 2px solid var(--rpm-border); border-radius: 10px; padding: 12px 14px; margin-bottom: 18px; }
+.rpm-hero-select:focus { outline: none; border-color: var(--rpm-emerald); }
 .rpm-hero-chips { display: grid; grid-template-columns: 1fr 1fr; gap: 10px; margin-bottom: 24px; }
-.rpm-hero-chip { background: var(--rpm-bg); border: 2px solid var(--rpm-border); color: var(--rpm-text-dark); font-size: 15px; font-weight: 600; padding: 14px 8px; border-radius: 10px; transition: all 0.3s ease-in-out; }
+.rpm-hero-chip { background: var(--rpm-bg); border: 2px solid var(--rpm-border); color: var(--rpm-text-dark); font-size: 15px; font-weight: 600; padding: 12px 8px; border-radius: 10px; transition: all 0.3s ease-in-out; }
 .rpm-hero-chip:hover { border-color: var(--rpm-emerald); }
 .rpm-hero-chip.active { border-color: var(--rpm-emerald); background: rgba(16, 183, 127, 0.1); }
 .rpm-hero-arrow { font-style: normal; }
