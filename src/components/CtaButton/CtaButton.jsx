@@ -26,6 +26,7 @@ function CtaButton({ children, onClick, className = '' }) {
 
   return (
     <button ref={ref} type="button" className={`rpm-cta-btn ${className}`} onClick={onClick} onPointerMove={handleMove} onPointerLeave={handleLeave}>
+      <span className="rpm-cta-btn-gloss" aria-hidden="true" />
       <span className="rpm-cta-btn-label">{children}</span>
       <span className="rpm-cta-btn-arrow" aria-hidden="true">
         <ArrowRight className="rpm-cta-btn-arrow-out" size={20} strokeWidth={2} />
