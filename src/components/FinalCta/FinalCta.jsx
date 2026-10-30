@@ -2,7 +2,7 @@ import { useState } from 'react'
 import { PHONE_DISPLAY, PHONE_HREF } from '../../config'
 import './FinalCta.css'
 
-function FinalCta() {
+function FinalCta({ onApply }) {
   const [openIndex, setOpenIndex] = useState(0)
 
   return (
@@ -24,7 +24,7 @@ function FinalCta() {
         <div className="rpm-final-banner">
           <h2 className="rpm-final-banner-title">Keep your doors open and your business growing.</h2>
           <p className="rpm-final-banner-sub">Apply in 2 minutes. No obligation, no hard credit pull.</p>
-          <a className="rpm-btn" href="#rpm-apply">Get funded today →</a>
+          <button type="button" className="rpm-btn rpm-btn-pulse" onClick={onApply}>Get funded today →</button>
           <p className="rpm-final-banner-call">Prefer to talk? Call <a href={PHONE_HREF}>{PHONE_DISPLAY}</a></p>
         </div>
 

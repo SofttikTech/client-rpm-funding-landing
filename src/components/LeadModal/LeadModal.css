@@ -1,0 +1,32 @@
+.rpm-modal { position: fixed; inset: 0; z-index: 100; display: flex; align-items: center; justify-content: center; padding: 24px; background: rgba(7, 16, 34, 0.72); backdrop-filter: blur(6px); animation: rpm-modal-fade 0.3s ease-out both; }
+.rpm-modal-panel { position: relative; display: grid; grid-template-columns: 0.8fr 1.2fr; width: 100%; max-width: 1040px; height: min(760px, 100%); background: #fff; border-radius: 24px; overflow: hidden; box-shadow: 0 40px 120px rgba(0, 0, 0, 0.5); animation: rpm-modal-pop 0.4s cubic-bezier(0.2, 0.9, 0.3, 1.1) both; }
+.rpm-modal-close { position: absolute; top: 14px; right: 14px; z-index: 2; width: 38px; height: 38px; border: none; border-radius: 50%; background: rgba(15, 31, 61, 0.08); color: var(--rpm-text-dark); font-size: 24px; line-height: 1; transition: all 0.3s ease-in-out; }
+.rpm-modal-close:hover { background: rgba(15, 31, 61, 0.16); }
+
+.rpm-modal-pitch { position: relative; overflow: hidden; display: flex; flex-direction: column; justify-content: center; padding: 48px 40px; color: #fff; background: radial-gradient(ellipse 80% 50% at 90% 0%, rgba(16, 183, 127, 0.4), transparent 70%), linear-gradient(165deg, var(--rpm-navy-dark), var(--rpm-navy) 60%, var(--rpm-navy-light)); }
+.rpm-modal-badge { align-self: flex-start; background: rgba(16, 183, 127, 0.15); border: 1px solid rgba(16, 183, 127, 0.4); font-size: 12px; font-weight: 600; padding: 5px 12px; border-radius: 40px; margin-bottom: 20px; }
+.rpm-modal-title { font-family: var(--rpm-font-head); font-size: 30px; line-height: 1.2; margin-bottom: 14px; }
+.rpm-modal-text { color: rgba(255, 255, 255, 0.8); margin-bottom: 26px; }
+.rpm-modal-list { list-style: none; display: flex; flex-direction: column; gap: 12px; margin-bottom: 28px; }
+.rpm-modal-perk { position: relative; padding-left: 30px; font-weight: 600; font-size: 15px; }
+.rpm-modal-perk::before { content: '✓'; position: absolute; left: 0; top: 0; width: 20px; height: 20px; border-radius: 50%; background: var(--rpm-emerald); font-size: 12px; display: flex; align-items: center; justify-content: center; }
+.rpm-modal-foot { font-size: 13px; color: rgba(255, 255, 255, 0.6); }
+
+.rpm-modal-form { min-height: 0; background: #fff; }
+.rpm-modal-frame { display: block; width: 100%; height: 100%; border: none; }
+
+@keyframes rpm-modal-fade { from { opacity: 0; } to { opacity: 1; } }
+@keyframes rpm-modal-pop { from { opacity: 0; transform: translateY(24px) scale(0.96); } to { opacity: 1; transform: translateY(0) scale(1); } }
+
+@media (max-width: 800px) {
+  .rpm-modal { padding: 0; align-items: flex-end; }
+  .rpm-modal-panel { grid-template-columns: minmax(0, 1fr); grid-template-rows: auto minmax(0, 1fr); height: 94vh; border-radius: 24px 24px 0 0; }
+  .rpm-modal-pitch { padding: 24px 22px 18px; }
+  .rpm-modal-title { font-size: 22px; margin-bottom: 0; }
+  .rpm-modal-badge, .rpm-modal-text, .rpm-modal-list, .rpm-modal-foot { display: none; }
+  .rpm-modal-close { background: rgba(255, 255, 255, 0.18); color: #fff; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .rpm-modal, .rpm-modal-panel { animation: none; }
+}

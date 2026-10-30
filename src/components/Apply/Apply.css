@@ -1,4 +1,4 @@
-.rpm-apply { padding: 40px 0 96px; background: var(--rpm-bg); }
+.rpm-apply { padding: 72px 0 96px; background: var(--rpm-bg); }
 .rpm-apply-grid { display: grid; grid-template-columns: 0.9fr 1.1fr; gap: 64px; align-items: start; }
 .rpm-apply-eyebrow { display: inline-block; font-size: 13px; font-weight: 700; letter-spacing: 1px; text-transform: uppercase; color: var(--rpm-emerald-dark); margin-bottom: 10px; }
 .rpm-apply-title { font-family: var(--rpm-font-head); font-size: 38px; line-height: 1.15; color: var(--rpm-text-dark); margin-bottom: 32px; }
