@@ -1,5 +1,5 @@
 import { useEffect, useRef, useState } from 'react'
-import { UtensilsCrossed, Scissors, Sparkles, HardHat, ShoppingBag, Phone } from 'lucide-react'
+import { ShieldCheck, Phone, ArrowRight } from 'lucide-react'
 import { PHONE_DISPLAY, PHONE_HREF } from '../../config'
 import './Hero.css'
 
@@ -83,18 +83,12 @@ function Hero({ onApply }) {
           <div className="rpm-hero-copy">
             <h1 className="rpm-hero-title">Get funded fast. <em>Repay as you sell.</em></h1>
             <div className="rpm-hero-actions">
-              <button type="button" className="rpm-btn rpm-btn-pulse" onClick={onApply}>See if I qualify <i className="rpm-hero-arrow">→</i></button>
+              <button type="button" className="rpm-btn rpm-btn-pulse" onClick={onApply}>See if I qualify <span className="rpm-btn-icon"><ArrowRight size={20} strokeWidth={2.2} aria-hidden="true" /></span></button>
               <span className="rpm-hero-note">Takes about 30 seconds</span>
             </div>
             <div className="rpm-hero-trust">
               <div className="rpm-hero-trust-top">
-                <div className="rpm-hero-trust-icons">
-                  {TRUST_ICONS.map(({ label, Icon }) => (
-                    <span key={label} className="rpm-hero-trust-icon" title={label}>
-                      <Icon size={20} strokeWidth={1.75} aria-hidden="true" />
-                    </span>
-                  ))}
-                </div>
+                <span className="rpm-hero-trust-mark"><ShieldCheck size={26} strokeWidth={1.75} aria-hidden="true" /></span>
                 <div className="rpm-hero-trust-text">
                   <strong className="rpm-hero-trust-headline">Trusted by <b>5,000+</b> business owners</strong>
                   <span className="rpm-hero-trust-sub">Miami, FL · Since 2019</span>
@@ -140,13 +134,6 @@ const STATS = [
   { value: '24hrs', label: 'average funding time' }
 ]
 // Reason: one icon per industry RPM serves, in place of customer faces we do not have permission to show
-const TRUST_ICONS = [
-  { label: 'Restaurants', Icon: UtensilsCrossed },
-  { label: 'Salons', Icon: Scissors },
-  { label: 'Med spas', Icon: Sparkles },
-  { label: 'Contractors', Icon: HardHat },
-  { label: 'Retail shops', Icon: ShoppingBag }
-]
 const PHOTOS = [
   { src: '/hero-owner.jpg', alt: 'Smiling restaurant owner checking sales on his phone', tag: 'Restaurants', position: '40% 50%' },
   { src: '/hero-salon.jpg', alt: 'Smiling salon owner standing in her salon', tag: 'Salons and parlors', position: '45% 50%' },

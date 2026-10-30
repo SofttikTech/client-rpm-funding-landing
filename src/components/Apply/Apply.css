@@ -6,8 +6,9 @@
 
 .rpm-apply-title { font-family: var(--rpm-font-head); font-size: 42px; line-height: 1.15; color: var(--rpm-text-dark); margin-bottom: 40px; }
 .rpm-apply-steps { list-style: none; display: flex; flex-direction: column; gap: 30px; margin-bottom: 40px; }
-.rpm-apply-step { display: flex; gap: 20px; align-items: flex-start; }
+.rpm-apply-step { position: relative; display: flex; gap: 20px; align-items: flex-start; }
 .rpm-apply-step-num { flex: none; display: flex; align-items: center; justify-content: center; width: 48px; height: 48px; border-radius: 50%; background: var(--rpm-navy); color: #fff; font-family: var(--rpm-font-body); font-weight: 700; font-size: 20px; }
+.rpm-apply-step:not(:last-child)::after { content: ''; position: absolute; left: 23px; top: 54px; bottom: -28px; width: 2px; background: linear-gradient(to bottom, rgba(16, 183, 127, 0.55), rgba(16, 183, 127, 0.05)); }
 .rpm-apply-step-title { font-size: 21px; line-height: 1.3; color: var(--rpm-text-dark); margin-bottom: 4px; }
 .rpm-apply-step-text { font-size: 17px; line-height: 1.55; color: #4b5563; }
 .rpm-apply-arrow { display: inline-flex; align-items: center; gap: 10px; font-size: 17px; font-weight: 700; color: var(--rpm-emerald-dark); }
